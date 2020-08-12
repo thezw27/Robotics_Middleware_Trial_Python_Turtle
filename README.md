@@ -5,8 +5,8 @@
 * python2/python3
 * OpenCV (`pip/pip3 install opencv-python`)
 * git (`sudo apt-get install git`)
-* [RobotRaconteur](https://github.com/robotraconteur/robotraconteur/wiki/Download)
-* [ROS Melodic](http://wiki.ros.org/melodic/Installation/Ubuntu)
+* [RobotRaconteur](https://github.com/robotraconteur/robotraconteur/wiki/Download) (Follow instruction to download)
+* [ROS Melodic](http://wiki.ros.org/melodic/Installation/Ubuntu) (Follow instruction to download)
 
 Clone this repo before continuing the trial:
 ```
