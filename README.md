@@ -11,7 +11,7 @@
 Clone this repo before continuing the trial:
 ```
 cd ~
-git clone https://github.com/hehonglu123/python_turtle_trial.git
+git clone https://github.com/hehonglu123/ROS_RR_turtle_trial.git
 ```
 ## Basic Examples:
 Inside `Example/` folder, there're three basic example scripts, showing how to read keyboard inputs, drive a turtle with python turtle module and detect red object.
@@ -23,8 +23,9 @@ Print command based on arrow key pressed.
 ### turtlebot.py
 Initialize screen display, spawn a turtle and drive the turtle.
 
-## ROS/RR Examples:
-* turtle keyboard control
-* turtle webcam color control
+## Trial Instruction:
+* ROS (https://github.com/hehonglu123/ROS_RR_turtle_trial/blob/master/ROS/src/Trial_instruction.md)
+* RR (https://github.com/hehonglu123/ROS_RR_turtle_trial/blob/master/RR/Trial_instruction.md)
+
 ![](color_code.gif)
-![](maze.gif)
+
