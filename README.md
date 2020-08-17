@@ -13,7 +13,13 @@ cd ~
 git clone https://github.com/hehonglu123/ROS_RR_turtle_trial.git
 ```
 ## Sample Python Scripts:
-Inside `Example/` folder, there're three basic example scripts, showing how to read keyboard inputs, drive a turtle with python turtle module and detect red object.
+Inside `Example/` folder, there're three basic ready-to-run example scripts:
+
+`turtlebot.py`: A simple python turtle script drive the turtle around and change color on screen.
+
+`keyboard.py`: A simple python script reads in arrow key on keyboard and print message based on key press.
+
+`detection_red.py`: A python script with OpenCV module reads in an image `Examples/images/red.jpeg` as OpenCV object, filtered with red filter (`cv2.inRange()`), and go through [Connected Component Labelling](https://docs.opencv.org/3.4/d3/dc0/group__imgproc__shape.html) to find connected parts as red objects.
 
 ### detection.py:
 Takes in an image with red circle, outputs a red filtered image.
