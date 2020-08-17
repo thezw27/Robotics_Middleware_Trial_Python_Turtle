@@ -12,7 +12,7 @@ Clone this repo before continuing the trial:
 cd ~
 git clone https://github.com/hehonglu123/ROS_RR_turtle_trial.git
 ```
-## Basic Examples:
+## Sample Python Scripts:
 Inside `Example/` folder, there're three basic example scripts, showing how to read keyboard inputs, drive a turtle with python turtle module and detect red object.
 
 ### detection.py:
