@@ -10,7 +10,7 @@
 Clone this repo before continuing the trial:
 ```
 cd ~
-git clone https://github.com/hehonglu123/ROS_RR_turtle_trial.git
+git clone https://github.com/hehonglu123/Robotics_Middleware_Trial_Python_Turtle.git
 ```
 ## Sample Python Scripts:
 Inside `Example/` folder, there're three basic ready-to-run example scripts:
