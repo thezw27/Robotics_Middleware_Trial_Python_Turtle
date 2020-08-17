@@ -1,5 +1,4 @@
-# ROS and RobotRaconteur python turtle module example
-
+# Robotics Middleware Trial Python Turtle
 ## Prerequisite:
 * Ubuntu 18.04 ([Native](https://www.linuxtechi.com/ubuntu-18-04-lts-desktop-installation-guide-screenshots/) or [Virtual](https://www.toptechskills.com/linux-tutorials-courses/how-to-install-ubuntu-1804-bionic-virtualbox/))
 * python2/python3
