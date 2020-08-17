@@ -19,18 +19,13 @@ Inside `Example/` folder, there're three basic ready-to-run example scripts:
 
 `keyboard.py`: A simple python script reads in arrow key on keyboard and print message based on key press.
 
-`detection_red.py`: A python script with OpenCV module reads in an image `Examples/images/red.jpeg` as OpenCV object, filtered with red filter (`cv2.inRange()`), and go through [Connected Component Labelling](https://docs.opencv.org/3.4/d3/dc0/group__imgproc__shape.html) to find connected parts as red objects.
-
-### detection.py:
-Takes in an image with red circle, outputs a red filtered image.
-### keyboard.py
-Print command based on arrow key pressed.
-### turtlebot.py
-Initialize screen display, spawn a turtle and drive the turtle.
+`detection_red.py`: A python script with OpenCV module reads in an image `Examples/images/red.jpeg` as OpenCV object, filtered with red filter (`cv2.inRange()`), display the filtered image, and go through [Connected Component Labelling](https://docs.opencv.org/3.4/d3/dc0/group__imgproc__shape.html) to find connected parts as red objects.
 
 ## Trial Instruction:
 * ROS (https://github.com/hehonglu123/ROS_RR_turtle_trial/blob/master/ROS/src/Trial_instruction.md)
 * RR (https://github.com/hehonglu123/ROS_RR_turtle_trial/blob/master/RR/Trial_instruction.md)
+
+The final goal is to integrate those standalone python examples with ROS/RR, such that the python turtle will be able to drive based on what webcam sees.
 
 ![](color_code.gif)
 
