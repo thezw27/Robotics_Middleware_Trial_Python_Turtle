@@ -100,7 +100,7 @@ finally:
 ```
 
 
-### `detection_red.py`: A python script with OpenCV module reads in an image `Examples/images/red.jpeg` as OpenCV object, filtered with red filter (`cv2.inRange()`), display the filtered image, and go through [Connected Component Labelling](https://docs.opencv.org/3.4/d3/dc0/group__imgproc__shape.html) to find connected parts as red objects.
+### `detection_red.py`: A python script with OpenCV module reads in an image `Examples/images/red.jpeg` as OpenCV object, filtered with red filter (`cv2.inRange()`), display the filtered image, and go through [Connected Component Labeling](https://docs.opencv.org/3.4/d3/dc0/group__imgproc__shape.html) to find connected parts as red objects.
 
 First the libraries are imported:
 ```
@@ -121,7 +121,7 @@ cv2.namedWindow("Image")
 cv2.imshow("Image",filtered_red)
 cv2.waitKey()
 ```
-The second step is to filter out the "noise", so the Connect Component Labelling is used here on the filtered image:
+The second step is to filter out the "noise", so the Connect Component Labeling is used here on the filtered image:
 ```
 #run color connected components to filter the counts and centroid
 retval, labels, stats, centroids=cv2.connectedComponentsWithStats(filtered_red) #run CCC on the filtered image
