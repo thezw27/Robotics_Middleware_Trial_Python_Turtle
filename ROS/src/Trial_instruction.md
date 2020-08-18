@@ -1,5 +1,12 @@
 # ROS Survey
 The structure of ROS is a little different from Robot Raconteur. It has the Publisher-Subscriber relationship between different nodes.
+## ROS Resources:
+* rospy: http://wiki.ros.org/rospy
+* Catkin workspace: http://wiki.ros.org/catkin/workspaces
+* ROS message: http://wiki.ros.org/msg
+* ROS service: http://wiki.ros.org/srv
+* Example rospy Publisher/Subscriber: http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28python%29
+* Full ROS online tutorial: http://wiki.ros.org/ROS/Tutorials
 
 # Setup
 ## Catkin Workspace
