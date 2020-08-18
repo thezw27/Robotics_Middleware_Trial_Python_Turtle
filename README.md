@@ -13,7 +13,7 @@ cd ~
 git clone https://github.com/hehonglu123/Robotics_Middleware_Trial_Python_Turtle.git
 ```
 ## Sample Python Scripts:
-Inside `Example/` folder, there're three basic ready-to-run example scripts:
+Inside `Example/` folder, there're three basic ready-to-run example scripts, and they could be run simply by `$ python <script name>`
 
 ### `turtlebot.py`: A simple python turtle script drive the turtle around and change color on screen.
 
