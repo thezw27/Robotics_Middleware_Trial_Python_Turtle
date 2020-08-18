@@ -17,9 +17,122 @@ Inside `Example/` folder, there're three basic ready-to-run example scripts:
 
 `turtlebot.py`: A simple python turtle script drive the turtle around and change color on screen.
 
+The python turtle module is imported by
+```
+import turtle
+``` 
+And the display and turtle is initialized by
+```
+screen = turtle.Screen()
+t1 = turtle.Turtle()
+t1.shape("turtle")
+screen.bgcolor("lightblue")
+```
+After that, we have a `drive()` function and a `setpose()` function which drive the turtle based on given speed and set its absolute pose on screen respectively.
+```
+def drive(turtlebot,move_speed,turn_speed):  #Drive function, update new position, this is the one referred in definition
+
+	turtlebot.forward(move_speed)
+	turtlebot.left(turn_speed)
+
+def setpose(turtlebot,x,y,angle):            #set a new pose for turtlebot
+
+	turtlebot.setpos(x,y)
+	turtlebot.seth(angle)
+```
+Inside the first `for` loop, the turtle is driven forward:
+```
+for i in range(50):
+	drive(t1,10,0)
+```
+Then the turtle color is changed to red:
+```
+t1.pencolor("red")
+```
+In the second `for` loop, the turtle is driven in a spiral shape:
+```
+for i in range(50):
+	drive(t1,10,i)
+```
+
 `keyboard.py`: A simple python script reads in arrow key on keyboard and print message based on key press.
 
+The system is set and initialzied to read keyboard press:
+```
+import termios, fcntl, sys, os
+
+#keyboard reading settings
+fd = sys.stdin.fileno()
+oldterm = termios.tcgetattr(fd)
+newattr = termios.tcgetattr(fd)
+newattr[3] = newattr[3] & ~termios.ICANON & ~termios.ECHO
+termios.tcsetattr(fd, termios.TCSANOW, newattr)
+oldflags = fcntl.fcntl(fd, fcntl.F_GETFL)
+fcntl.fcntl(fd, fcntl.F_SETFL, oldflags | os.O_NONBLOCK)
+```
+In the while loop, the keyboard buffer is kept read in and detected. The arrow key starts with `\x1b[`, and if `q` is pressed, it breaks out of the loop and exit.
+```
+try:
+  while True:
+        try:
+            #read input and print "command"
+            c = sys.stdin.read()
+            if "\x1b[A" in c:
+                print("drive forward")          ####Drive forward
+            if "\x1b[B" in c:
+                print("drive backward")         ####Drive backward               
+            if "\x1b[C" in c:
+                print("drive right")            ####Drive right
+            if "\x1b[D" in c:
+                print("drive left")             ####Drive left
+            if "q" in c:
+                break
+
+        except IOError: pass
+        except TypeError: pass
+```
+The two `except` here prevents empty buffer error. And finally up exit the system is set back to normal:
+```
+#finish reading keyboard input
+finally:
+    termios.tcsetattr(fd, termios.TCSAFLUSH, oldterm)
+    fcntl.fcntl(fd, fcntl.F_SETFL, oldflags)
+```
+
+
 `detection_red.py`: A python script with OpenCV module reads in an image `Examples/images/red.jpeg` as OpenCV object, filtered with red filter (`cv2.inRange()`), display the filtered image, and go through [Connected Component Labelling](https://docs.opencv.org/3.4/d3/dc0/group__imgproc__shape.html) to find connected parts as red objects.
+
+First the libraries are imported:
+```
+import cv2
+import numpy as np
+```
+And then the image is read in as an OpenCV object with metadate variables:
+```
+image=cv2.imread("images/red.jpeg")        #read in image
+image_size=len(image)*len(image[0]) #get image size
+image_dimension=np.array([len(image),len(image[0])])    #get image dimension
+```
+Then the image is filtered with red filter, and display the filtered result on screen:
+```
+filtered_red=cv2.inRange(image,np.array([5,5,200]),np.array([200,200,255])) #filter the image with upper bound and lower bound in bgr format
+#show filtered image
+cv2.namedWindow("Image")
+cv2.imshow("Image",filtered_red)
+cv2.waitKey()
+```
+The second step is to filter out the "noise", so the Connect Component Labelling is used here on the filtered image:
+```
+#run color connected components to filter the counts and centroid
+retval, labels, stats, centroids=cv2.connectedComponentsWithStats(filtered_red) #run CCC on the filtered image
+idx=np.where(np.logical_and(stats[:,4]>=0.01*image_size, stats[:,4]<=0.1*image_size))[0]    #threshold the components to find the best one
+for i in idx:
+    if np.linalg.norm(centroids[i]-image_dimension/2.)<50:  #threshold again, only for ones near the center
+        print("red detected")
+```
+
+
+
 
 ## Trial Instruction:
 * ROS (https://github.com/hehonglu123/ROS_RR_turtle_trial/blob/master/ROS/src/Trial_instruction.md)
