@@ -311,4 +311,6 @@ All rospy scripts can run with `python` command, but make sure have one and only
 From tutorial above, you should have a complete turtlebot subscriber and a simple turtlebot publisher. Given `keyboard.py` under `~/python_turtle_trial/Examples`, try creating a script `client_keyboard.py` under `~/python_turtle_trial/ROS/src/python_turtle/src/` that display the turtle as well as reading in inputs from the keyboard to drive the turtle accordingly.
 
 ## 2
-Given the camera publisher `~/python_turtle_trial/ROS/src/webcam/src/cam_pub.py` and detection example `Examples/detection.py`, try create a script subscribing images from the webcam, process the image and publishing command to drive the turtle based on the color detected in your webcam.
+![](ROS.JPG)
+
+The final goal is to create a server-client model above, with the turtle server node keeps track of the state of the turtle, the webcam captures image continuously and publish them, the client node subscribe and display the turtle with python turtle module and command the turtle through publisher based on image content. The webcam publisher is provided and the turtle server node is created through tutorial; given and detection example `Examples/detection.py`, create the final client node subscribing images from the webcam, process the image and publishing command to drive the turtle based on the color detected in your webcam.
