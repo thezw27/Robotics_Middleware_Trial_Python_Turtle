@@ -8,14 +8,14 @@ The structure of ROS is a little different from Robot Raconteur. It has the Publ
 * Example rospy Publisher/Subscriber: http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28python%29
 * Full ROS online tutorial: http://wiki.ros.org/ROS/Tutorials
 ## Outline
-### [Setup](#setup)
+### Setup
 * [Catkin Workspace](#catkin-workspace)
 * [Package](#package)
 * [Message Types](#message-types)
 * [Service Types](#service-types)
 * [Build Workspace](#build-workspace)
-### [ROS Publisher](#ros-publisher)
-### [ROS Subscriber](#ros-subscriber)
+### ROS Publisher
+### ROS Subscriber
 * [Create Turtlebot Server](#create-turtlebot-server)
 * [Create Turtlebot Client](#create-turtlebot-client)
 
@@ -170,6 +170,9 @@ $ echo 'source ~/python_turtle_trial/ROS/devel/setup.bash' >> ~/.bashrc
 ```
 This step adds the command everytime you open up a new terminal. If errors like something not found or not built, try `source ~/python_turtle_trial/ROS/devel/setup.bash` to source the workspace directly.
 
+* Checkpoint 1: 
+Build should be successful without any errors. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
+
 # ROS Publisher
 Under `~/python_turtle_trial/ROS/src/webcam/src/` there is a python script called `cam_pub.py`. At the very top, we include ROS library and message types:
 ``` 
@@ -192,9 +195,12 @@ frame=webcam.CaptureFrame()
 pub.publish(bridge.cv2_to_imgmsg(frame, "bgr8")) 
 ```
 The image is captured and convert to ROS Image type, and finally published to the topic by the publisher.
-To run this script, open a new terminal and run `roscore`. After that, you can run this script by `python cam_pub.py`.
-For every ROS communication, there needs to be one and only one roscore running. To check if the images are successfully published or not, open up a new terminal and type in `rostopic echo image_raw`.
-This way the terminal shall display the image data.
+To run this script, open a new terminal and run `$ roscore`. After that, you can run this script by `python cam_pub.py`.
+For every ROS communication, there needs to be one and only one roscore running. To check if the images are successfully published or not, open up a new terminal and type in `$ rostopic echo image_raw`.
+This way the terminal shall display the raw image data.
+
+* Checkpoint 2: 
+After the publisher runs, in the separate window, `$ rostopic echo image_raw` will display the raw image data. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
 
 # ROS Subscriber
 
@@ -213,9 +219,10 @@ try:
 except CvBridgeError as e:
 	print(e)
 ```
-Above lines basically convert the `Image` type data into an openCV image object, so that it could be displayed out on screen.
+Above lines basically convert the `Image` type data into an OpenCV image object, so that it could be displayed out on screen.
 
-
+* Checkpoint 3: 
+There should be a popup window displaying the realtime image from webcam. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
 
 
 ## Create Turtlebot Server
@@ -272,6 +279,11 @@ while not rospy.is_shutdown():
 ```
 By filling up the `<>` sections above, you should have a complete turtlebot server.
 
+* Checkpoint 4: 
+Make sure have one and only one `roscore` running.
+
+Run the script with `$ python turtlebot_service.py`, it should be running with no error messages. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
+
 ## Create Turtlebot Client
 Now let's create a simple ROS client for the turtlebot. Create a new file and name it `turtlebot_client.py`. First import the ROS and other essential libraries at top:
 ```
@@ -323,6 +335,10 @@ while not rospy.is_shutdown():
 	msg.angular.z=10
 	pub.publish(msg)  
 ```
+
+* Checkpoint 5:
+Run the script with `$ python turtlebot_client.py`, it should drive the turtle in a circle. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
+
 All rospy scripts can run with `python` command, but make sure have one and only one `roscore` running.
 
 # Task
