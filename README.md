@@ -13,7 +13,7 @@ cd ~
 git clone https://github.com/hehonglu123/Robotics_Middleware_Trial_Python_Turtle.git
 ```
 ## Pre-trial Python Scripts:
-Inside `Example/` folder, there're three basic ready-to-run example scripts, and they could be run simply by `$ python <script name>`. Please run each one individually: 
+Inside `Example/` folder, there're three basic ready-to-run example scripts, and they could be run simply by `$ python <script name>`. Please run each one individually and make sure you have a good understanding of them. 
 * `turtlebot.py`: A simple python turtle script drive the turtle around and change color on screen. 
 * `keyboard.py`: A simple python script reads in arrow key on keyboard and print message based on key press.
 * `detection.py`: A python script with OpenCV module reads in an image `Examples/images/red.jpeg` as OpenCV object, filtered with red filter (`cv2.inRange()`), display the filtered image, and go through [Connected Component Labeling](https://docs.opencv.org/3.4/d3/dc0/group__imgproc__shape.html) to find connected parts as red objects.
