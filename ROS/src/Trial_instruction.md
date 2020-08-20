@@ -170,7 +170,7 @@ $ echo 'source ~/python_turtle_trial/ROS/devel/setup.bash' >> ~/.bashrc
 ```
 This step adds the command everytime you open up a new terminal. If errors like something not found or not built, try `source ~/python_turtle_trial/ROS/devel/setup.bash` to source the workspace directly.
 
-* Checkpoint 1: 
+* **Checkpoint 1: 
 Build should be successful without any errors. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
 
 # ROS Publisher
@@ -199,7 +199,7 @@ To run this script, open a new terminal and run `$ roscore`. After that, you can
 For every ROS communication, there needs to be one and only one roscore running. To check if the images are successfully published or not, open up a new terminal and type in `$ rostopic echo image_raw`.
 This way the terminal shall display the raw image data.
 
-* Checkpoint 2: 
+* **Checkpoint 2: 
 After the publisher runs, in the separate window, `$ rostopic echo image_raw` will display the raw image data. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
 
 # ROS Subscriber
@@ -221,7 +221,7 @@ except CvBridgeError as e:
 ```
 Above lines basically convert the `Image` type data into an OpenCV image object, so that it could be displayed out on screen.
 
-* Checkpoint 3: 
+* **Checkpoint 3: 
 There should be a popup window displaying the realtime image from webcam. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
 
 
@@ -279,7 +279,7 @@ while not rospy.is_shutdown():
 ```
 By filling up the `<>` sections above, you should have a complete turtlebot server.
 
-* Checkpoint 4: 
+* **Checkpoint 4: 
 Make sure have one and only one `roscore` running.
 
 Run the script with `$ python turtlebot_service.py`, it should be running with no error messages. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
@@ -336,7 +336,7 @@ while not rospy.is_shutdown():
 	pub.publish(msg)  
 ```
 
-* Checkpoint 5:
+* **Checkpoint 5:
 Run the script with `$ python turtlebot_client.py`, it bring up a window and drive the turtle in a circle. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
 
 All rospy scripts can run with `python` command, but make sure have one and only one `roscore` running.
@@ -345,7 +345,7 @@ All rospy scripts can run with `python` command, but make sure have one and only
 ## 1
 From tutorial above, you should have a complete turtlebot subscriber and a simple turtlebot publisher. Given `keyboard.py` under `~/python_turtle_trial/Examples`, try creating a script `client_keyboard.py` under `~/python_turtle_trial/ROS/src/python_turtle/src/` that display the turtle as well as reading in inputs from the keyboard to drive the turtle accordingly.
 
-* Checkpoint 5:
+* **Checkpoint 6:
 Run the script with `$ python client_keyboard.py`, it bring up a window. In the terminal, arrow key press will drive the turtle on screen accordinly. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
 
 ## 2
@@ -355,5 +355,5 @@ The final goal is to create a server-client model above, with the turtle server 
 
 Given and detection example `Examples/detection.py`, create the final client node subscribing images from the webcam, process the image and publishing command to drive the turtle based on the color detected in your webcam.
 
-* Checkpoint 6:
+* Checkpoint 7:
 By pointing the webcam at different section of the [color wheel](https://commons.wikimedia.org/wiki/File:RGB_color_wheel_360.svg), the turtle on screen should drive based on the color seen. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
