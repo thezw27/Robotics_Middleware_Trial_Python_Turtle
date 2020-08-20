@@ -151,7 +151,7 @@ with RR.ServerNodeSetup(<service definition name>, <port number>):      #setup R
 By filling in the sections above, an RR turtlebot service is ready to run by `python turtlebot_service.py`!
 
 * Checkpoint 2:
-There'll be a popup window with blue background, and the terminal should print "Press enter to quit" after running the service. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
+The terminal should print "Press enter to quit" after running the service without any error. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
 
 # RR Client
 ## Webcam Example Streaming Client
@@ -236,7 +236,7 @@ while True:
 Make sure the service has already started, and then run this client by `python turtlebot_client.py`
 
 * Checkpoint 4:
-The popup window from turtlebot service should display the turtle running in circle. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
+There'll be a popup window with blue background and display the turtle running in circle. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
 
 
 # Task
