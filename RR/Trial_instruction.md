@@ -1,6 +1,6 @@
 # Robot Raconteur Survey
 Robot Raconteur is an object oriented Service-Client middleware. An RR service generally runs with a hardware (e.g. sensors,actuators) attached to a robot/computer to have direct communication between them. An RR client can receive messages that are sent from services and can call object functions in the service to command the robot. 
-In this example, we'll go through how RR webcam streaming works.
+In this example, we'll go through how RR webcam streaming works. **Please time yourself for each checkpoint.**
 ## RR Resources:
 * RR Website: https://www.robotraconteur.com/
 * RR Framework: https://robotraconteur.github.io/robotraconteur/doc/core/latest/cpp/index.html
@@ -104,6 +104,8 @@ The service is registered with name "Webcam", type of "experimental.createwebcam
 
 The `input()` function at last holds the script from exiting. To run this script, simply run `$ python webcam_service.py`.
 
+* Checkpoint 1: 
+The terminal should print "Press Enter to quit" after running the service. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
 
 ## Create Turtlebot Service
 Now let's create an RR service for the turtlebot. Create a new file and name it `turtlebot_service.py`. First import the RR and other essential libraries at top:
@@ -148,6 +150,9 @@ with RR.ServerNodeSetup(<service definition name>, <port number>):      #setup R
 	
 By filling in the sections above, an RR turtlebot service is ready to run by `python turtlebot_service.py`!
 
+* Checkpoint 2:
+There'll be a popup window with blue background, and the terminal should print "Press enter to quit" after running the service. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
+
 # RR Client
 ## Webcam Example Streaming Client
 There's script `streaming_client.py` under `~/python_turtle_trial/RR`. The RR client library is imported at the top:
@@ -172,6 +177,10 @@ cam=RRN.ConnectService(url)
 WebcamImageToMat(cam.image)
 ```
 To run this script, simply do `$ python streaming_client.py`.
+
+* Checkpoint 3:
+The popup window should display the real time image from webcam. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
+
 
 ## Create Simple Turtlebot Client
 Now let's create a simple RR client for the turtlebot. Create a new file and name it `turtlebot_client.py`. First import the RR and other essential libraries at top:
@@ -226,11 +235,22 @@ while True:
 ```
 Make sure the service has already started, and then run this client by `python turtlebot_client.py`
 
+* Checkpoint 4:
+The popup window from turtlebot service should display the turtle running in circle. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
+
+
 # Task
 ## 1
 From the tutorial above, you should have a complete turtlebot service and a simple turtlebot client. Given the example of reading keyboard inputs under `~/python_turtle_trial/Examples`, copy it to `~/python_turtle_trial/RR` and try adapting it into an RR client that can control the turtle through keyboard.
+* Checkpoint 5:
+In the terminal running keyboard client, pressing the arrow keys will make the turtle in the window move accordingly. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
+
+
 ## 2
 ![](RR.JPG)
 The final goal is to create a service-client model above, with the turtle service keeps track of the state of the turtle, the webcam captures image continuously and expose them to client, the client display the turtle with python turtle module and command the turtle based on image content. The webcam service is provided and the turtle service is created through tutorial; given the detection example `Examples/detection.py`, create the final client reading in images from the webcam service, process the image and drive the turtle based on the color detected in your webcam as well as setting the color of the turtle to color detected.
+
+* Checkpoint 6:
+By pointing the webcam at different section of the [color wheel](https://commons.wikimedia.org/wiki/File:RGB_color_wheel_360.svg), the turtle on screen should drive based on the color seen. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
 
 
