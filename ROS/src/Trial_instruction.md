@@ -1,5 +1,5 @@
 # ROS Survey
-The structure of ROS is a little different from Robot Raconteur. It has the Publisher-Subscriber relationship between different nodes. **Please time yourself for each checkpoint.**
+The structure of ROS is a little different from Robot Raconteur. It has the Publisher-Subscriber relationship between different nodes. **Please time yourself for each Checkpoint.**
 ## ROS Resources:
 * rospy: http://wiki.ros.org/rospy
 * Catkin workspace: http://wiki.ros.org/catkin/workspaces
@@ -337,7 +337,7 @@ while not rospy.is_shutdown():
 ```
 
 * Checkpoint 5:
-Run the script with `$ python turtlebot_client.py`, it should drive the turtle in a circle. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
+Run the script with `$ python turtlebot_client.py`, it bring up a window and drive the turtle in a circle. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
 
 All rospy scripts can run with `python` command, but make sure have one and only one `roscore` running.
 
@@ -345,7 +345,15 @@ All rospy scripts can run with `python` command, but make sure have one and only
 ## 1
 From tutorial above, you should have a complete turtlebot subscriber and a simple turtlebot publisher. Given `keyboard.py` under `~/python_turtle_trial/Examples`, try creating a script `client_keyboard.py` under `~/python_turtle_trial/ROS/src/python_turtle/src/` that display the turtle as well as reading in inputs from the keyboard to drive the turtle accordingly.
 
+* Checkpoint 5:
+Run the script with `$ python client_keyboard.py`, it bring up a window. In the terminal, arrow key press will drive the turtle on screen accordinly. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
+
 ## 2
 ![](ROS.JPG)
 
-The final goal is to create a server-client model above, with the turtle server node keeps track of the state of the turtle, the webcam captures image continuously and publish them, the client node subscribe and display the turtle with python turtle module and command the turtle through publisher based on image content. The webcam publisher is provided and the turtle server node is created through tutorial; given and detection example `Examples/detection.py`, create the final client node subscribing images from the webcam, process the image and publishing command to drive the turtle based on the color detected in your webcam.
+The final goal is to create a server-client model above, with the turtle server node keeps track of the state of the turtle, the webcam captures image continuously and publish them, the client node subscribe and display the turtle with python turtle module and command the turtle through publisher based on image content. The webcam publisher is provided and the turtle server node is created through tutorial.
+
+Given and detection example `Examples/detection.py`, create the final client node subscribing images from the webcam, process the image and publishing command to drive the turtle based on the color detected in your webcam.
+
+* Checkpoint 6:
+By pointing the webcam at different section of the [color wheel](https://commons.wikimedia.org/wiki/File:RGB_color_wheel_360.svg), the turtle on screen should drive based on the color seen. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
