@@ -4,7 +4,7 @@
 * python2/python3
 * OpenCV (`pip/pip3 install opencv-python`)
 * git (`sudo apt-get install git`)
-* [RobotRaconteur](https://github.com/robotraconteur/robotraconteur/wiki/Download) (Follow instruction to download)
+* [RobotRaconteur 0.10](https://github.com/robotraconteur/robotraconteur/wiki/Download) (Follow instruction to download)
 * [ROS Melodic](http://wiki.ros.org/melodic/Installation/Ubuntu) (Follow instruction to download)
 
 Clone this repo before continuing the trial:
@@ -12,6 +12,13 @@ Clone this repo before continuing the trial:
 cd ~
 git clone https://github.com/hehonglu123/Robotics_Middleware_Trial_Python_Turtle.git
 ```
+## Question Post:
+During the trial process, if you encounter questions specific about this trial, feel free to ask in the channel. For questions about RobotRaconteur or ROS, please search/post them on [Stack Overflow](https://stackoverflow.com/) with `RobotRaconteur`/`ROS` tag. ROS has a large community, so it's possible to get an anwser just by searching. Please include the following while posting your questions:
+* Setup: Ubuntu 18.04, ROS Melodic/RR 0.10
+* ROS/RR Error Message
+* Related scripts
+* Correct format: https://stackoverflow.com/help/formatting
+
 ## Pre-trial Python Scripts:
 Inside `Example/` folder, there're three basic ready-to-run example scripts, and they could be run simply by `$ python <script name>`. Please run each one individually and make sure you have a good understanding of them. 
 * `turtlebot.py`: A simple python turtle script drive the turtle around and change color on screen. 
