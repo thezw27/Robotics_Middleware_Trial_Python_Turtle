@@ -1,5 +1,5 @@
 # ROS Survey
-The structure of ROS is a little different from Robot Raconteur. It has the Publisher-Subscriber relationship between different nodes.
+The structure of ROS is a little different from Robot Raconteur. It has the Publisher-Subscriber relationship between different nodes. **Please time yourself for each checkpoint.**
 ## ROS Resources:
 * rospy: http://wiki.ros.org/rospy
 * Catkin workspace: http://wiki.ros.org/catkin/workspaces
@@ -7,6 +7,18 @@ The structure of ROS is a little different from Robot Raconteur. It has the Publ
 * ROS service: http://wiki.ros.org/srv
 * Example rospy Publisher/Subscriber: http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28python%29
 * Full ROS online tutorial: http://wiki.ros.org/ROS/Tutorials
+## Outline
+### [Setup](#setup)
+* [Catkin Workspace](#catkin-workspace)
+* [Package](#package)
+* [Message Types](#message-types)
+* [Service Types](#service-types)
+* [Build Workspace](#build-workspace)
+### [ROS Publisher](#ros-publisher)
+### [ROS Subscriber](#ros-subscriber)
+* [Create Turtlebot Server](#create-turtlebot-server)
+* [Create Turtlebot Client](#create-turtlebot-client)
+
 
 # Setup
 ## Catkin Workspace
@@ -19,7 +31,7 @@ catkin_create_pkg python_turtle std_msgs geometry_msgs rospy
 ```
 This creates a new package `python_turtle` under `~/python_turtle_trial/ROS/src`, with dependencies of `std_msgs`, `geometry_msgs` and `rospy`.
 
-# Message Types
+## Message Types
 Similar to RobotRaconteur service definition, for ROS there're [message types](http://wiki.ros.org/Messages) and [service types](http://wiki.ros.org/Services). In the task we'll need to create our own message and service types.
 When building ROS, many message and service types are built together, which you can look up online: http://wiki.ros.org/common_msgs. 
 In the task we'll ask to create your own message type `turtle_ros`:
@@ -99,7 +111,7 @@ turtle_obj.turtle_pose=Pose()
 turtle_obj.color="red"
 ```
 
-# Service Types
+## Service Types
 A ROS service is similar to a function call, and in the task we'll ask you to create a `setpose` and `setcolor`:
 
 `setpose`:
