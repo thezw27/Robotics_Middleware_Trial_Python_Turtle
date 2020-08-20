@@ -104,7 +104,7 @@ The service is registered with name "Webcam", type of "experimental.createwebcam
 
 The `input()` function at last holds the script from exiting. To run this script, simply run `$ python webcam_service.py`.
 
-* Checkpoint 1: 
+* **Checkpoint 1**: 
 The terminal should print "Press Enter to quit" after running the service. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
 
 ## Create Turtlebot Service
@@ -150,7 +150,7 @@ with RR.ServerNodeSetup(<service definition name>, <port number>):      #setup R
 	
 By filling in the sections above, an RR turtlebot service is ready to run by `python turtlebot_service.py`!
 
-* Checkpoint 2:
+* **Checkpoint 2**:
 The terminal should print "Press enter to quit" after running the service without any error. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
 
 # RR Client
@@ -178,7 +178,7 @@ WebcamImageToMat(cam.image)
 ```
 To run this script, simply do `$ python streaming_client.py`.
 
-* Checkpoint 3:
+* **Checkpoint 3**:
 The popup window should display the real time image from webcam. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
 
 
@@ -235,14 +235,14 @@ while True:
 ```
 Make sure the service has already started, and then run this client by `python turtlebot_client.py`
 
-* Checkpoint 4:
+* **Checkpoint 4**:
 There'll be a popup window with blue background and display the turtle running in circle. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
 
 
 # Task
 ## 1
 From the tutorial above, you should have a complete turtlebot service and a simple turtlebot client. Given the example of reading keyboard inputs under `~/python_turtle_trial/Examples`, copy it to `~/python_turtle_trial/RR` and try adapting it into an RR client that can control the turtle through keyboard.
-* Checkpoint 5:
+* **Checkpoint 5**:
 In the terminal running keyboard client, pressing the arrow keys will make the turtle in the window move accordingly. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
 
 
@@ -252,7 +252,7 @@ The final goal is to create a service-client model above, with the turtle servic
 
 Given the detection example `Examples/detection.py`, create the final client reading in images from the webcam service, process the image and drive the turtle based on the color detected in your webcam as well as setting the color of the turtle to color detected.
 
-* Checkpoint 6:
+* **Checkpoint 6**:
 By pointing the webcam at different section of the [color wheel](https://commons.wikimedia.org/wiki/File:RGB_color_wheel_360.svg), the turtle on screen should drive based on the color seen. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
 
 
