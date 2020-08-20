@@ -248,7 +248,9 @@ In the terminal running keyboard client, pressing the arrow keys will make the t
 
 ## 2
 ![](RR.JPG)
-The final goal is to create a service-client model above, with the turtle service keeps track of the state of the turtle, the webcam captures image continuously and expose them to client, the client display the turtle with python turtle module and command the turtle based on image content. The webcam service is provided and the turtle service is created through tutorial; given the detection example `Examples/detection.py`, create the final client reading in images from the webcam service, process the image and drive the turtle based on the color detected in your webcam as well as setting the color of the turtle to color detected.
+The final goal is to create a service-client model above, with the turtle service keeps track of the state of the turtle, the webcam captures image continuously and expose them to client, the client display the turtle with python turtle module and command the turtle based on image content. The webcam service is provided and the turtle service is created through tutorial.
+
+Given the detection example `Examples/detection.py`, create the final client reading in images from the webcam service, process the image and drive the turtle based on the color detected in your webcam as well as setting the color of the turtle to color detected.
 
 * Checkpoint 6:
 By pointing the webcam at different section of the [color wheel](https://commons.wikimedia.org/wiki/File:RGB_color_wheel_360.svg), the turtle on screen should drive based on the color seen. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
