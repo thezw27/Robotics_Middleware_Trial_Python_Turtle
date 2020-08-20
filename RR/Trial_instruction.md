@@ -9,6 +9,12 @@ In this example, we'll go through how RR webcam streaming works.
 ### [Service Definition](#service-definition)
 * [Webcam Service Definition](#webcam-example-service-definition)
 * [Turtlebot Service Definition](#create-turtlebot-service-definition)
+### [RR Service](#rr-service)
+* [Webcam Example Service](#webcam-example-service)
+* [Turtlebot Service](#create-turtlebot-service)
+### [RR Client](#rr-client)
+* [Webcam Streaming Client](#webcam-example-streaming-client)
+* [Simple Turtlebot Client](#create-simple-turtlebot-client)
 
 
 # Service Definition
