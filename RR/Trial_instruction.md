@@ -5,6 +5,11 @@ In this example, we'll go through how RR webcam streaming works.
 * RR Website: https://www.robotraconteur.com/
 * RR Framework: https://robotraconteur.github.io/robotraconteur/doc/core/latest/cpp/index.html
 * RR Python Examples: https://github.com/robotraconteur/RobotRaconteur_Python_Examples
+## Outline
+### [Service Definition](#service-definition)
+* [Webcam Service Definition](#webcam-example-service-definition)
+* [Turtlebot Service Definition](#create-turtlebot-service-definition)
+
 
 # Service Definition
 Each RR service has its own service definition file, which includes properties, functions and others that are exposed to clients. In other words, the definition inside the `.robdef` file are the ones the client has access to. 
