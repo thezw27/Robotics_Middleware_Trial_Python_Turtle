@@ -1,7 +1,7 @@
 # Robotics Middleware Trial Python Turtle
 ## Prerequisite:
 * Ubuntu 18.04 ([Native](https://www.linuxtechi.com/ubuntu-18-04-lts-desktop-installation-guide-screenshots/) or [Virtual](https://www.toptechskills.com/linux-tutorials-courses/how-to-install-ubuntu-1804-bionic-virtualbox/))
-* python2/python3
+* python2/python3 (`python` for python2, `python3` for python3, be aware of which one you're using)
 * OpenCV (`pip/pip3 install opencv-python`)
 * git (`sudo apt-get install git`)
 * [RobotRaconteur 0.10](https://github.com/robotraconteur/robotraconteur/wiki/Download) (Follow instruction to download)
