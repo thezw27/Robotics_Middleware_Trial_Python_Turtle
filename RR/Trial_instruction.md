@@ -6,13 +6,13 @@ In this example, we'll go through how RR webcam streaming works. **Please time y
 * RR Framework: https://robotraconteur.github.io/robotraconteur/doc/core/latest/cpp/index.html
 * RR Python Examples: https://github.com/robotraconteur/RobotRaconteur_Python_Examples
 ## Outline
-### [Service Definition](#service-definition)
+### Service Definition
 * [Webcam Service Definition](#webcam-example-service-definition)
 * [Turtlebot Service Definition](#create-turtlebot-service-definition)
-### [RR Service](#rr-service)
+### RR Service
 * [Webcam Example Service](#webcam-example-service)
 * [Turtlebot Service](#create-turtlebot-service)
-### [RR Client](#rr-client)
+### RR Client
 * [Webcam Streaming Client](#webcam-example-streaming-client)
 * [Simple Turtlebot Client](#create-simple-turtlebot-client)
 
