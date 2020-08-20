@@ -79,7 +79,7 @@ Now take a look at the main function, the node name and port number is specified
 ```
 with RR.ServerNodeSetup("Webcam_Service",2355) as node_setup:
 ```
-In this case, the node name is "Webcam_Service" and the port is 2355.
+In this case, the node name is "Webcam_Service" and the port is 2355 (arbirary defined, as long as not used by other applications).
 The service definition file is registered right after that:
 ```
 RRN.RegisterServiceTypeFromFile("robdef/experimental.createwebcam2")
