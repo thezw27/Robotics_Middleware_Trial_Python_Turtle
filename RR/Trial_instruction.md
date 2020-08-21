@@ -148,7 +148,7 @@ with RR.ServerNodeSetup(<service definition name>, <port number>):      #setup R
 	input("Press enter to quit")
 ```
 	
-By filling in the sections above, an RR turtlebot service is ready to run by `python turtlebot_service.py`!
+By filling in the sections above, an RR turtlebot service is ready to run by `$ python turtlebot_service.py`!
 
 * **Checkpoint 2**:
 The terminal should print "Press enter to quit" after running the service without any error. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
