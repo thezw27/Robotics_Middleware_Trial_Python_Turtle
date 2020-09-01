@@ -170,11 +170,12 @@ $ python streaming_client.py rr+tcp://localhost:2355/?service=Webcam
 
 ,where `localhost` means the service is running on this local machine.
 ```
-cam=RRN.ConnectService(url)
+cam_sub=RRN.SubscribeService(url)
+cam_obj=cam_sub.GetDefaultClientWait(5)
 ```
-`cam` is the object returned by `ConnectService`, and it should contain the member defined in the service definition, which is the `image` property. And the image is accessed and converted to openCV object by
+`cam_sub` is the subscription object of Robot Raconteur, subscribing to the given url. `cam_obj` is the object returned from the service side, and it should contain the member defined in the service definition, which is the `image` property. And the image is accessed and converted to openCV object by
 ```
-WebcamImageToMat(cam.image)
+WebcamImageToMat(cam_obj.image)
 ```
 To run this script, simply do `$ python streaming_client.py`.
 
@@ -218,13 +219,9 @@ if (len(sys.argv)>=2):
 Since we have a `wire` in our service definition, it's better to use the subscriber mode here;
 ```
 sub=RRN.SubscribeService(url)
-while True:	
-	try:								#keep looping if not connecting to a service
-		turtle_obj = sub.GetDefaultClient(url)			#turtle object sent from service
-		turtle_pose_wire=sub.SubscribeWire(<wire name>)		#subscribe to the wire name
-		break
-	except RR.ConnectionException:
-		time.sleep(0.1)
+turtle_obj = sub.GetDefaultClientWait(5)		#wait for 5 seconds timeout if no object returned
+turtle_pose_wire=sub.SubscribeWire(<wire name>)		#subscribe to the wire name
+
 ```
 
 A good example would be having the turtle driving a circle:
