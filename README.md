@@ -134,7 +134,12 @@ cv2.namedWindow("Image")
 cv2.imshow("Image",filtered_red)
 cv2.waitKey()
 ```
-The second step is to filter out the "noise", so the Connect Component Labeling is used here on the filtered image:
+
+![](Examples/images/red.jpeg) 
+![](Examples/images/filtered_red.png)
+
+
+As a result, this script will read in the image at left and output image on the right. The second step is to filter out the "noise", so the Connect Component Labeling is used here on the filtered image:
 ```
 #run color connected components to filter the counts and centroid
 retval, labels, stats, centroids=cv2.connectedComponentsWithStats(filtered_red) #run CCC on the filtered image
@@ -143,7 +148,6 @@ for i in idx:
     if np.linalg.norm(centroids[i]-image_dimension/2.)<50:  #threshold again, only for ones near the center
         print("red detected")
 ```
-
 
 
 
