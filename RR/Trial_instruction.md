@@ -1,5 +1,8 @@
 # Robot Raconteur Survey
 Robot Raconteur is an object oriented Service-Client middleware. An RR service generally runs with a hardware (e.g. sensors,actuators) attached to a robot/computer to have direct communication between them. An RR client can receive messages that are sent from services and can call object functions in the service to command the robot. 
+
+The goal for this trial is to create python turtle service and client, along with a given webcam service to control the on screen turtle based on different color the webcam sees.
+
 In this example, we'll go through how RR webcam streaming works. **Please time yourself for each checkpoint.**
 ## RR Resources:
 * RR Website: https://www.robotraconteur.com/
