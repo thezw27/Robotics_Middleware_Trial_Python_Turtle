@@ -1,5 +1,5 @@
 # Robotics Middleware Trial Python Turtle
-## Description:
+
 This is a evaluation trial on Robot Operating System ([ROS](https://www.ros.org/)) and Robot Raconteur ([RR](robotraconteur.com)) using python turtle module. Participants are provided with ready-to-run example scripts, and the goal upon completion is to integrate those standalone python codes with ROS/RR and control the on screen turtle with a webcam.
 
 ## Prerequisite:
