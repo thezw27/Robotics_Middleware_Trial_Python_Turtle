@@ -83,6 +83,8 @@ termios.tcsetattr(fd, termios.TCSANOW, newattr)
 oldflags = fcntl.fcntl(fd, fcntl.F_GETFL)
 fcntl.fcntl(fd, fcntl.F_SETFL, oldflags | os.O_NONBLOCK)
 ```
+Above settings set the terminal to read characters in nonblocking mode.
+
 In the while loop, the keyboard buffer is kept read in and detected. The arrow key starts with `\x1b[`, and if `q` is pressed, it breaks out of the loop and exit.
 ```
 try:
@@ -114,6 +116,7 @@ finally:
 
 
 ### `detection_red.py`
+This is an example detecting if an image containing large section of red color. 
 
 First the libraries are imported:
 ```
