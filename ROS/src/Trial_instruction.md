@@ -1,5 +1,7 @@
 # ROS Survey
-The structure of ROS is a little different from Robot Raconteur. It has the Publisher-Subscriber relationship between different nodes. **Please time yourself for each Checkpoint.**
+The structure of ROS is Publisher-Subscriber relationship among different nodes. The goal for this trial is to create python turtle node with service and subscriber, a python node as client publishing turtle actions, along with a given webcam image publisher to control the on screen turtle based on different color the webcam sees.
+
+**Please time yourself for each Checkpoint.**
 ## ROS Resources:
 * rospy: http://wiki.ros.org/rospy
 * Catkin workspace: http://wiki.ros.org/catkin/workspaces
