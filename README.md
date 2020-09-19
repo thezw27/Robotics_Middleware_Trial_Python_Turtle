@@ -1,4 +1,7 @@
 # Robotics Middleware Trial Python Turtle
+## Description:
+This is a evaluation trial on Robot Operating System ([ROS](https://www.ros.org/)) and Robot Raconteur ([RR](robotraconteur.com)) using python turtle module. Participants are provided with ready-to-run example scripts, and the goal upon completion is to integrate those standalone python codes with ROS/RR and control the on screen turtle with a webcam.
+
 ## Prerequisite:
 * Ubuntu 18.04 ([Native](https://www.linuxtechi.com/ubuntu-18-04-lts-desktop-installation-guide-screenshots/) or [Virtual](https://www.toptechskills.com/linux-tutorials-courses/how-to-install-ubuntu-1804-bionic-virtualbox/))
 * python2/python3 (`python` for python2, `python3` for python3, be aware of which one you're using)
