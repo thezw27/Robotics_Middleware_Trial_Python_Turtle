@@ -63,7 +63,7 @@ object turtlesim
 	wire pose turtle_pose_wire [readonly]
 	property string color
 
-end object
+end
 ```
 With provided service definition above, create a file `experimental.turtlebot_create.robdef` under `~/python_turtle_trial/RR/robdef` and copy them into the file as your service definition file. Feel free to modify it later. This service definition will give you a sense on what object information to contain in your RR service later.
 
@@ -93,7 +93,7 @@ Now take a look at the main function, the node name and port number is specified
 ```
 with RR.ServerNodeSetup("Webcam_Service",2355) as node_setup:
 ```
-In this case, the node name is "Webcam_Service" and the port is 2355 (arbirary defined, as long as not used by other applications).
+In this case, the node name is "Webcam_Service" and the port is 2355 (arbitrary defined, as long as not used by other applications).
 The service definition file is registered right after that:
 ```
 RRN.RegisterServiceTypeFromFile("robdef/experimental.createwebcam2")
@@ -145,7 +145,7 @@ with RR.ServerNodeSetup(<service definition name>, <port number>):      #setup R
 	create_inst=<create class object>                #create object
 
 	#Register the service with definition and object
-	RRN.RegisterService(<service name>,<service definition object>,<object to be passed>)
+	RRN.RegisterService(<service name>,<service definition object type>,<object to be passed>)
 
 	#Wait for program exit to quit
 	input("Press enter to quit")
@@ -162,7 +162,7 @@ There's script `streaming_client.py` under `~/python_turtle_trial/RR`. The RR cl
 ```
 from RobotRaconteur.Client import *
 ```
-The function `WebcamImageToMat(image)` converts RR image property to openCV object. Inside main function, the `url` is the string containing the IP address of the service, the port the service is on and the service name. The default url in script is
+The function `WebcamImageToMat(image)` converts RR image property to OpenCV object. Inside main function, the `url` is the string containing the IP address of the service, the port the service is on and the service name. The default url in script is
 ```
 url='rr+tcp://localhost:2355/?service=Webcam'
 ```
@@ -176,7 +176,7 @@ $ python streaming_client.py rr+tcp://localhost:2355/?service=Webcam
 cam_sub=RRN.SubscribeService(url)
 cam_obj=cam_sub.GetDefaultClientWait(5)
 ```
-`cam_sub` is the subscription object of Robot Raconteur, subscribing to the given url. `cam_obj` is the object returned from the service side, and it should contain the member defined in the service definition, which is the `image` property. And the image is accessed and converted to openCV object by
+`cam_sub` is the subscription object of Robot Raconteur, subscribing to the given url. `cam_obj` is the object returned from the service side, and it should contain the member defined in the service definition, which is the `image` property. And the image is accessed and converted to OpenCV object by
 ```
 WebcamImageToMat(cam_obj.image)
 ```
