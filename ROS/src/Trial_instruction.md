@@ -221,7 +221,7 @@ try:
 except CvBridgeError as e:
 	print(e)
 ```
-Above lines basically convert the `Image` type data into an OpenCV image object, so that it could be displayed out on screen.
+Above lines basically convert the `Image` type data into an OpenCV image object, so that it could be displayed out on screen. Note that the `callback()` is only triggered upon messaged received, so if you would like to use the data/message at other places, it's best to make it global.
 
 * **Checkpoint 3**: 
 There should be a popup window displaying the realtime image from webcam. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
