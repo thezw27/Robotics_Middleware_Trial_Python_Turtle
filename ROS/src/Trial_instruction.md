@@ -358,4 +358,4 @@ The final goal is to create a server-client model above, with the turtle server 
 Given and detection example `Examples/detection.py`, create the final client node subscribing images from the webcam, process the image and publishing command to drive the turtle based on the color detected in your webcam.
 
 * **Checkpoint 7**:
-By pointing the webcam at different section of the [color wheel](https://commons.wikimedia.org/wiki/File:RGB_color_wheel_360.svg), the turtle on screen should drive based on the color seen. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
+By pointing the webcam at different colors (R/G/B), the turtle on screen should drive based on the color seen. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
