@@ -20,7 +20,7 @@ During the trial process, if you encounter questions specific about this trial, 
 * Setup: Ubuntu 18.04, ROS Melodic/RR 0.10
 * ROS/RR Error Message
 * Related scripts
-* Correct format: https://stackoverflow.com/help/formatting
+
 
 ## Pre-trial Python Scripts:
 Inside `Example/` folder, there're three basic ready-to-run example scripts, and they could be run simply by `$ python <script name>`. Please run each one individually and make sure you have a good understanding of them. 
