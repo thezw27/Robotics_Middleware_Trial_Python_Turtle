@@ -16,7 +16,7 @@ cd ~
 git clone https://github.com/hehonglu123/Robotics_Middleware_Trial_Python_Turtle.git
 ```
 ## Question Post:
-During the trial process, if you encounter questions specific about this trial, feel free to ask in the channel. For questions about RobotRaconteur or ROS, please search/post them on [Stack Overflow](https://stackoverflow.com/) with `RobotRaconteur`/`ROS` tag. ROS has a large community, so it's possible to get an anwser just by searching. Please include the following while posting your questions:
+During the trial process, if you encounter questions specific about this trial, feel free to ask in the workspace. For questions about RobotRaconteur or ROS, please go to http://wiki.ros.org/answers.ros.org for ROS, and https://www.robotraconteur.com/forum for RR. Please include the following while posting your questions:
 * Setup: Ubuntu 18.04, ROS Melodic/RR 0.10
 * ROS/RR Error Message
 * Related scripts
