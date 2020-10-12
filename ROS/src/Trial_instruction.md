@@ -24,14 +24,14 @@ The structure of ROS is Publisher-Subscriber relationship among different nodes.
 
 # Setup
 ## Catkin Workspace
-For each ROS project there's a dedicated catkin workspace, and in this trial the workspace is `~/python_turtle_trial/ROS` already created in the repo.
+For each ROS project there's a dedicated catkin workspace, and in this trial the workspace is `~/Robotics_Middleware_Trial_Python_Turtle/ROS` already created in the repo.
 ## Package
-Unlike RobotRaconteur, ROS requires the workspace to build the content. All packages should be in `workspace/src/` folder. In this repository there's already a webcam package (`~/python_turtle_trial/ROS/src/webcam/`), so you'll need to [create another package](http://wiki.ros.org/ROS/Tutorials/CreatingPackage) for python turtle:
+Unlike RobotRaconteur, ROS requires the workspace to build the content. All packages should be in `workspace/src/` folder. In this repository there's already a webcam package (`~/Robotics_Middleware_Trial_Python_Turtle/ROS/src/webcam/`), so you'll need to [create another package](http://wiki.ros.org/ROS/Tutorials/CreatingPackage) for python turtle:
 ```
-cd ~/python_turtle_trial/ROS
+cd ~/Robotics_Middleware_Trial_Python_Turtle/ROS
 catkin_create_pkg python_turtle std_msgs geometry_msgs rospy
 ```
-This creates a new package `python_turtle` under `~/python_turtle_trial/ROS/src`, with dependencies of `std_msgs`, `geometry_msgs` and `rospy`.
+This creates a new package `python_turtle` under `~/Robotics_Middleware_Trial_Python_Turtle/ROS/src`, with dependencies of `std_msgs`, `geometry_msgs` and `rospy`.
 
 ## Message Types
 Similar to RobotRaconteur service definition, for ROS there're [message types](http://wiki.ros.org/Messages) and [service types](http://wiki.ros.org/Services). In the task we'll need to create our own message and service types.
@@ -42,7 +42,7 @@ string name
 geometry_msgs/Pose turtle_pose
 string color
 ```
-This bascially shows the message contains the name of the turtle, its pose and color. Since this message is part of the `python_turtle` package, create a folder under `~/python_turtle_trial/ROS/src/python_turtle/` called `msg`. Then create a file named `turtle_msg.msg`, and copy above message definition into this file as your own message type.
+This bascially shows the message contains the name of the turtle, its pose and color. Since this message is part of the `python_turtle` package, create a folder under `~/Robotics_Middleware_Trial_Python_Turtle/ROS/src/python_turtle/` called `msg`. Then create a file named `turtle_msg.msg`, and copy above message definition into this file as your own message type.
 
 In order to let the compiler know and build the message for you, it's necessary to modify the `package.xml` as well as `CMakeLists.txt` under package `python_turtle`. So first open up `package.xml` and uncomment below two lines:
 ```
@@ -130,7 +130,7 @@ int8 ret
 ```
 ROS service has to have a return type, so we can simply return an `int` instead of `void`. 
 
-Generating a ROS service type is similar to generating a message type. First create a folder under `~/python_turtle_trial/ROS/src/python_turtle/` called `srv`. Then create two files named `setpose.srv` and `setcolor.srv`, and copy above service definitions into these files as your own service types.
+Generating a ROS service type is similar to generating a message type. First create a folder under `~/Robotics_Middleware_Trial_Python_Turtle/ROS/src/python_turtle/` called `srv`. Then create two files named `setpose.srv` and `setcolor.srv`, and copy above service definitions into these files as your own service types.
 Some steps are overlapped when creating services and messages, so only a bit differences. Navigate to `CMakeLists.txt` under package `python_turtle`, open it up and look for code below:
 ```
 # add_service_files(
@@ -163,20 +163,20 @@ Remember to build your workspace and source it to get your service types exposed
 ## Build Workspace
 Type in following commands to build your workspace:
 ```
-cd ~/python_turtle_trial/ROS
+cd ~/Robotics_Middleware_Trial_Python_Turtle/ROS
 catkin_make
 ```
 It should finish without errors, and generating `/build` and `/devel` folders under the same directory. However, to make sure your code knows what you've built, we need to source it:
 ```
-$ echo 'source ~/python_turtle_trial/ROS/devel/setup.bash' >> ~/.bashrc 
+$ echo 'source ~/Robotics_Middleware_Trial_Python_Turtle/ROS/devel/setup.bash' >> ~/.bashrc 
 ```
-This step adds the command everytime you open up a new terminal. If errors like something not found or not built, try `source ~/python_turtle_trial/ROS/devel/setup.bash` to source the workspace directly.
+This step adds the command everytime you open up a new terminal. If errors like something not found or not built, try `source ~/Robotics_Middleware_Trial_Python_Turtle/ROS/devel/setup.bash` to source the workspace directly.
 
 * **Checkpoint 1**: 
 Build should be successful without any errors. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
 
 # ROS Publisher
-Under `~/python_turtle_trial/ROS/src/webcam/src/` there is a python script called `cam_pub.py`. At the very top, we include ROS library and message types:
+Under `~/Robotics_Middleware_Trial_Python_Turtle/ROS/src/webcam/src/` there is a python script called `cam_pub.py`. At the very top, we include ROS library and message types:
 ``` 
 import rospy
 from sensor_msgs.msg import Image
@@ -206,7 +206,7 @@ After the publisher runs, in the separate window, `$ rostopic echo image_raw` wi
 
 # ROS Subscriber
 
-On your computer side, under `~/python_turtle_trial/ROS/src/webcam/src/` there is a python script called `cam_sub.py`. We include ROS library and message types at the top.
+On your computer side, under `~/Robotics_Middleware_Trial_Python_Turtle/ROS/src/webcam/src/` there is a python script called `cam_sub.py`. We include ROS library and message types at the top.
 Unlike a publisher, a subscriber subscribe to the topic, and trigger the `callback()` function. Inside main, 
 ```
 rospy.init_node('stream_node', anonymous=True)
@@ -228,7 +228,7 @@ There should be a popup window displaying the realtime image from webcam. Please
 
 
 ## Create Turtlebot Server
-All script about turtles should be in `~/python_turtle_trial/ROS/src/python_turtle/src/` directory, so let's create a file named `turtlebot_service.py`. The function of this script is to keep track of the turtle (pose and color).
+All script about turtles should be in `~/Robotics_Middleware_Trial_Python_Turtle/ROS/src/python_turtle/src/` directory, so let's create a file named `turtlebot_service.py`. The function of this script is to keep track of the turtle (pose and color).
 First, it's necessary to include ROS and relative libraries and messages:
 ```
 import time
@@ -345,7 +345,7 @@ All rospy scripts can run with `python` command, but make sure have one and only
 
 # Task
 ## 1
-From tutorial above, you should have a complete turtlebot subscriber and a simple turtlebot publisher. Given `keyboard.py` under `~/python_turtle_trial/Examples`, try creating a script `client_keyboard.py` under `~/python_turtle_trial/ROS/src/python_turtle/src/` that display the turtle as well as reading in inputs from the keyboard to drive the turtle accordingly.
+From tutorial above, you should have a complete turtlebot subscriber and a simple turtlebot publisher. Given `keyboard.py` under `~/Robotics_Middleware_Trial_Python_Turtle/Examples`, try creating a script `client_keyboard.py` under `~/Robotics_Middleware_Trial_Python_Turtle/ROS/src/python_turtle/src/` that display the turtle as well as reading in inputs from the keyboard to drive the turtle accordingly.
 
 * **Checkpoint 6**:
 Run the script with `$ python client_keyboard.py`, it bring up a window. In the terminal, arrow key press will drive the turtle on screen accordinly. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
