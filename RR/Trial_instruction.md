@@ -23,7 +23,7 @@ In this example, we'll go through how RR webcam streaming works. **Please time y
 # Service Definition
 Each RR service has its own service definition file, which includes properties, functions and others that are exposed to clients. In other words, the definition inside the `.robdef` file are the ones the client has access to. 
 ## Webcam Example Service Definition
-Let's take a look at the webcam example service definition `~/python_turtle_trial/RR/robdef/experimental.createwebcam2.robdef` below:
+Let's take a look at the webcam example service definition `~/Robotics_Middleware_Trial_Python_Turtle/RR/robdef/experimental.createwebcam2.robdef` below:
 ```
 service experimental.createwebcam2
 
@@ -65,11 +65,11 @@ object turtlesim
 
 end
 ```
-With provided service definition above, create a file `experimental.turtlebot_create.robdef` under `~/python_turtle_trial/RR/robdef` and copy them into the file as your service definition file. Feel free to modify it later. This service definition will give you a sense on what object information to contain in your RR service later.
+With provided service definition above, create a file `experimental.turtlebot_create.robdef` under `~/Robotics_Middleware_Trial_Python_Turtle/RR/robdef` and copy them into the file as your service definition file. Feel free to modify it later. This service definition will give you a sense on what object information to contain in your RR service later.
 
 # RR Service
 ## Webcam Example Service
-Inside `~/python_turtle_trial/RR`, there's `webcam_service.py` python script for RR webcam service. This example continuously capturing images from a webcam.
+Inside `~/Robotics_Middleware_Trial_Python_Turtle/RR`, there's `webcam_service.py` python script for RR webcam service. This example continuously capturing images from a webcam.
 At very top, the RobotRaconteur library is imported:
 ```
 import RobotRaconteur as RR
@@ -158,7 +158,7 @@ The terminal should print "Press enter to quit" after running the service withou
 
 # RR Client
 ## Webcam Example Streaming Client
-There's script `streaming_client.py` under `~/python_turtle_trial/RR`. The RR client library is imported at the top:
+There's script `streaming_client.py` under `~/Robotics_Middleware_Trial_Python_Turtle/RR`. The RR client library is imported at the top:
 ```
 from RobotRaconteur.Client import *
 ```
@@ -241,7 +241,7 @@ There'll be a popup window with blue background and display the turtle running i
 
 # Task
 ## 1
-From the tutorial above, you should have a complete turtlebot service and a simple turtlebot client. Given the example of reading keyboard inputs under `~/python_turtle_trial/Examples`, copy it to `~/python_turtle_trial/RR` and try adapting it into an RR client that can control the turtle through keyboard.
+From the tutorial above, you should have a complete turtlebot service and a simple turtlebot client. Given the example of reading keyboard inputs under `~/Robotics_Middleware_Trial_Python_Turtle/Examples`, copy it to `~/Robotics_Middleware_Trial_Python_Turtle/RR` and try adapting it into an RR client that can control the turtle through keyboard.
 * **Checkpoint 5**:
 In the terminal running keyboard client, pressing the arrow keys will make the turtle in the window move accordingly. Please direct to `Robotics_Middleware_Trial_Python_Turtle/readme.md` for question post.
 
