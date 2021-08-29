@@ -5,7 +5,7 @@ This is a evaluation trial on Robot Operating System ([ROS](https://www.ros.org/
 ## Prerequisite:
 * Ubuntu 18.04 ([Native](https://www.linuxtechi.com/ubuntu-18-04-lts-desktop-installation-guide-screenshots/))
 * python2/python3 (`python` for python2, `python3` for python3, be aware of which one you're using)
-* OpenCV (`pip/pip3 install opencv-python`)
+* OpenCV (`sudo apt-get install python-opencv`)
 * git (`sudo apt-get install git`)
 * [RobotRaconteur 0.10](https://github.com/robotraconteur/robotraconteur/wiki/Download) (Follow instruction to download)
 * [ROS Melodic](http://wiki.ros.org/melodic/Installation/Ubuntu) (Follow instruction to download)
