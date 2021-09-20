@@ -354,3 +354,8 @@ build/
 devel/
 generated_src/
 generated_src
+
+# exclude ROS2 build
+ROS2/dev_ws/build/*
+ROS2/dev_ws/install/*
+ROS2/dev_ws/log/*
