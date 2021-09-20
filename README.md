@@ -14,6 +14,8 @@ This is a evaluation trial on Robot Operating System ([ROS](https://www.ros.org/
 * [ROS Melodic](http://wiki.ros.org/melodic/Installation/Ubuntu) (Follow instruction to download)
 
 #### ROS2
+
+##### Ubuntu 20.04 as the OS
 * Ubuntu 20.04 ([Native](https://www.linuxtechi.com/ubuntu-20-04-lts-installation-steps-screenshots/))
 * python3
 * OpenCV (`pip3 install opencv-python --user`)
@@ -23,6 +25,32 @@ This is a evaluation trial on Robot Operating System ([ROS](https://www.ros.org/
 ```
 sudo apt install python3-colcon-common-extensions
 
+```
+
+##### Win10 as the OS
+* Window 10
+* Follow this [link](https://docs.ros.org/en/foxy/Installation/Windows-Install-Binary.html#install-visual-c-redistributables) to install all requirements (ROS2 foxy/python3.8/OpenCV)
+* Install RTI Connext [Link](https://docs.ros.org/en/foxy/Installation/DDS-Implementations.html#windows-binary-install)
+* Go to C:\Python38. Copy python and paste it with the new name `python_d`.
+* [Colcon](https://docs.ros.org/en/foxy/Tutorials/Colcon-Tutorial.html#install-colcon), simply run the command
+```
+pip install -U colcon-common-extensions
+```
+
+
+##### Docker
+* Follow these instruction to install [docker-engine](https://docs.docker.com/engine/install/ubuntu/) on ubuntu.
+* Fire up container with the following commands
+```
+cd ~/robotics_middleware_trial_python_turtle_ros2
+source docker_run_ros2.sh
+```
+* Join a conatiner with the following commands
+```
+```
+cd ~/robotics_middleware_trial_python_turtle_ros2
+source docker_join_ros2.sh
+```
 ```
 
 #### RR

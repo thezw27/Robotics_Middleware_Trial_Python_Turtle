@@ -41,17 +41,27 @@ The goal for this trial is to create python turtle node with ROS2 service subscr
 ## Setup
 **Starting Point of Checkpoint 1**
 ### Workspace
-For each ROS2 project, there's a dedicated workspace. Unlike in ROS1 we use `catkin`, in ROS2 we use `colcon` to build our workspace. The workspace here is `~/robotics_middleware_trial_python_turtle_ros2/ROS2/dev_ws` which is already created.
+For each ROS2 project, there's a dedicated workspace. Unlike in ROS1 we use `catkin`, in ROS2 we use `colcon` to build our workspace. The workspace here is `~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws` which is already created.
 
 ### Package
-Like ROS1 (and unlike RobotRaconteur), ROS2 requires the workspace to build content. All package should be in `workspace/src` folder. In this repository there's already a webcam package (`~/robotics_middleware_trial_python_turtle_ros2/ROS2/dev_ws/src/webcam`), so you'll need to [create another package](https://docs.ros.org/en/foxy/Tutorials/Creating-Your-First-ROS2-Package.html) for python turtle.
+Like ROS1 (and unlike RobotRaconteur), ROS2 requires the workspace to build content. All package should be in `workspace/src` folder. In this repository there's already a webcam package (`~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws/src/webcam`), so you'll need to [create another package](https://docs.ros.org/en/foxy/Tutorials/Creating-Your-First-ROS2-Package.html) for python turtle.
 
+We use terminal to command a lot. For **ubuntu** simply use the terminal. For **Window** use `Developer Command Prompt for VS 2019` (You can find it in your start menu).
+
+
+**Ubuntu**
 ```
-$ cd ~/robotics_middleware_trial_python_turtle_ros2/ROS2/dev_ws/src
+$ cd ~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws/src
 $ ros2 pkg create --build-type ament_python python_turtle
 ```
+**Window** (Open command prompt with adminitsrator)
+```
+$ cd (PATH TO YOUR REPO)\Robotics_Middleware_Trial_Python_Turtle\ROS2\dev_ws\src
+$ ros2 pkg create --build-type ament_python python_turtle
+```
+Note the direction of slashes is different between ubuntu and window machines.
 
-This creates a new package `python_turtle` under `~/robotics_middleware_trial_python_turtle_ros2/ROS2/dev_ws/src`.
+This creates a new package `python_turtle` under `~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws/src`.
 
 Unlike ROS1, `python` and `C++` uses in different types of package. For `python` use `ament_python` and for `C++` use `ament_cmake`. However, it's possible to build the package with `ament_cmake_python` which both language can be used in the package.
 There are also minor different touches for these two language. In this trial, we use `python`.
@@ -60,8 +70,14 @@ There are also minor different touches for these two language. In this trial, we
 ROS2 shares the same pre-defined message types (e.g. std_msgs, sensor_msgs) with ROS1 which users can include. Furthermore, ROS2 allows customized [message types and service types](https://docs.ros.org/en/foxy/Tutorials/Custom-ROS2-Interfaces.html). Remeber customized messages and only be defined and build in `ament_cmake` type of package (but of course can be used across all other packages.)
 
 Let's create our own message type `turtle_msg`! We first create a new package `turtle_interfaces`.
+**Ubuntu**
 ```
-$ cd ~/robotics_middleware_trial_python_turtle_ros2/ROS2/dev_ws/src
+$ cd ~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws/src
+$ ros2 pkg create --build-type ament_cmake turtle_interfaces
+```
+**Window** (Open command prompt with adminitsrator)
+```
+$ cd (PATH TO YOUR REPO)\Robotics_Middleware_Trial_Python_Turtle\ROS2\dev_ws\src
 $ ros2 pkg create --build-type ament_cmake turtle_interfaces
 ```
 
@@ -144,21 +160,28 @@ We'll get to how to use these services and messages in the later checkpoints.
 ### Build the Workspace and Packages
 We use `colcon build` to build the packages. Remeber to setup the ROS2 environment whenever a new terminal is open.
 
+**Ubntu**
 ```
 $ source /opt/ros/foxy/setup.bash
-$ cd ~/robotics_middleware_trial_python_turtle_ros2/ROS2/dev_ws
+$ cd ~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws
+$ colcon build
+```
+**Window** (Open command prompt with adminitsrator)
+```
+$ call C:\dev\ros2_foxy\local_setup.bat
+$ cd (PATH TO YOUR REPO)/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws
 $ colcon build
 ```
 
 You should see `Summary: X packages finished` where `X` is the number of your packages in the workspace. Three folders `build/` `install/` and `log/` were generated. Remeber to setup the workspace if you want to use packages in the workspace.
 
 ```
-$ source ~/robotics_middleware_trial_python_turtle_ros2/ROS2/dev_ws/install/setup.bash
+$ source ~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws/install/setup.bash
 ```
 
 You can also add the command to your bash script so everytime a new terminal is open, the workspace environment is setup.
 ```
-$ echo 'source ~/robotics_middleware_trial_python_turtle_ros2/ROS2/dev_ws/install/setup.bash' >> ~/.bashrc 
+$ echo 'source ~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws/install/setup.bash' >> ~/.bashrc 
 ```
 
 * **Checkpoint 1**: 
@@ -170,7 +193,7 @@ ros2 interfaces show turtle_interfaces/srv/Setpose
 ros2 interfaces show turtle_interfaces/srv/Setcolor
 ```
 
-Please direct to [Readme](https://github.com/eric565648/robotics_middleware_trial_python_turtle_ros2) for question post.
+Please direct to [Readme](https://github.com/eric565648/Robotics_Middleware_Trial_Python_Turtle) for question post.
 
 ## ROS2 Topic (Publisher-Subcriber)
 **Starting Point of Checkpoint 2**
@@ -182,7 +205,7 @@ Topics are buses between nodes. Nodes utilize **publisher** and **subscribers** 
 Quick note, the ROS2 is mode object-oriented than ROS1. 
 
 ### Publisher
-Let's take a look at the code of the publisher node. Please see the file `webcam/cam_pub.py` in the `webcam` package folder (`~/robotics_middleware_trial_python_turtle_ros2/ROS2/dev_ws/src/webcam`). Note that instead of `src` folder, we put python scripts in the folder with **the same name as the package** in python-type package in ROS2. However, for the C++-type folder, we put it in `src` folder as we did in ROS1.
+Let's take a look at the code of the publisher node. Please see the file `webcam/cam_pub.py` in the `webcam` package folder (`~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws/src/webcam`). Note that instead of `src` folder, we put python scripts in the folder with **the same name as the package** in python-type package in ROS2. However, for the C++-type folder, we put it in `src` folder as we did in ROS1.
 
 First, we include the necessary python libraries as we always did. The library for ROS2 in python is `rclpy`.
 ```
@@ -285,7 +308,7 @@ Now you know the basic ROS2 node, publish and subscription concept and usage and
 
 ### Turtlebot Server
 
-Let's start with the server script. Don't worry, we have prepared a template for you. Please copy `~/robotics_middleware_trial_python_turtle_ros2/ROS2/templates/turtlebot_server.py` to `~/robotics_middleware_trial_python_turtle_ros2/ROS2/dev_ws/src/python_turtle/python_turtle/turtlebot_server.py`. As mentioned in the previous section, python scripts should be put in the folder **with the same name** as the package.
+Let's start with the server script. Don't worry, we have prepared a template for you. Please copy `~/Robotics_Middleware_Trial_Python_Turtle/ROS2/templates/turtlebot_server.py` to `~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws/src/python_turtle/python_turtle/turtlebot_server.py`. As mentioned in the previous section, python scripts should be put in the folder **with the same name** as the package.
 
 In the `def main()` function, we have initialize ROS2 and the object for you. Remeber to spin the object otherwise the script will only be execute once.
 ```
@@ -354,7 +377,7 @@ def driving_timer_cb(self):
 
 ### Turtlebot Client
 
-We have finished `turtle_server.py`. Let's move on to turtle client. Please copy the file `~/robotics_middleware_trial_python_turtle_ros2/ROS2/templates/turtlebot_client.py` to `~/robotics_middleware_trial_python_turtle_ros2/ROS2/dev_ws/src/python_turtle/python_turtle/turtlebot_client.py`. And let's see the main function!.
+We have finished `turtle_server.py`. Let's move on to turtle client. Please copy the file `~/Robotics_Middleware_Trial_Python_Turtle/ROS2/templates/turtlebot_client.py` to `~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws/src/python_turtle/python_turtle/turtlebot_client.py`. And let's see the main function!.
 
 As we did in `turtle_server.py`, we also initialize ROS2 and a object for the node. The difference is that instead of `rclpy.spin('the object')`, we have a while loop here with a `rclpy.spin_once('the object')`. You can see these two as equivelent but we can add some steps here before and after each spin. The while loop first call the update function of the object, then spin the object node. Finally using the publisher of the object to publish a Twist message. You can see the twist has linear velocity in x-direction and angular velocity in z-direction. (Think about the callback function in `turtle_server.py`). We can guess that the motion of the turtlebot might be a circle if the twist does not change during the time. Please put the unit of linear and angular velocity you like. We recommend to put numbers around 1 and not too large. Depends on the amount and ratio between them, the turtle might move quicker or slower, the circle might get larger or smaller.
 ```
@@ -500,7 +523,7 @@ The function is pretty straightforward also. It set the color from the request m
 
 ### Service-Client
 
-Please copy the file `~/robotics_middleware_trial_python_turtle_ros2/ROS2/templates/service_client.py` to `~/robotics_middleware_trial_python_turtle_ros2/ROS2/dev_ws/src/python_turtle/python_turtle/service_client.py`. It share a similar code structure as `turtlebot_client.py` Let's see the main function.
+Please copy the file `~/Robotics_Middleware_Trial_Python_Turtle/ROS2/templates/service_client.py` to `~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws/src/python_turtle/python_turtle/service_client.py`. It share a similar code structure as `turtlebot_client.py` Let's see the main function.
 
 After initialize ROS2 and the object. The object call the service through the function `cli_obj.color_srvcall()`. Once the function was called, it enters a while loop and waits for the service to be done. When the `future` is `done`, it shows the repsond and break out the loop. The scripts then end. Note that the script is meant to execute only once, it's not necessary to end the script when the service call has completed.
 ```
@@ -648,7 +671,7 @@ def travel_to_goals_cb(self, goal_handle):
 
 ### Action-Client
 
-Please copy the file `~/robotics_middleware_trial_python_turtle_ros2/ROS2/templates/action_client.py` to `~/robotics_middleware_trial_python_turtle_ros2/ROS2/dev_ws/src/python_turtle/python_turtle/action_client.py`. It share a similar code structure as `server_client.py`. The main function pretty much to the same thing (i.e. create node object, call the action, call rclpy.spin). Let's head to the constructor of the class.
+Please copy the file `~/Robotics_Middleware_Trial_Python_Turtle/ROS2/templates/action_client.py` to `~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws/src/python_turtle/python_turtle/action_client.py`. It share a similar code structure as `server_client.py`. The main function pretty much to the same thing (i.e. create node object, call the action, call rclpy.spin). Let's head to the constructor of the class.
 
 As easy as it said, the constructor create an action client. Please fill up the type and the name of the action.
 ```
