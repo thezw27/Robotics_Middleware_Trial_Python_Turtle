@@ -1,8 +1,12 @@
 # Robotics Middleware Trial Python Turtle
 
-This is a evaluation trial on Robot Operating System ([ROS](https://www.ros.org/)) and Robot Raconteur ([RR](robotraconteur.com)) using python turtle module. Participants are provided with ready-to-run example scripts, and the goal upon completion is to integrate those standalone python codes with ROS/RR and control the on screen turtle with a webcam.
+This is a evaluation trial on Robot Operating System ([ROS](https://www.ros.org/)), Robot Operating System 2 ([ROS2](https://docs.ros.org/en/foxy/index.html)) and Robot Raconteur ([RR](robotraconteur.com)) using python turtle module. Participants are provided with ready-to-run example scripts, and the goal upon completion is to integrate those standalone python codes with ROS/ROS2/RR and control the on screen turtle with a webcam.
 
 ## Prerequisite:
+
+### System
+
+#### ROS
 * Ubuntu 20.04 ([Native](https://releases.ubuntu.com/20.04/))
 * python3.8
 * OpenCV (`sudo apt-get install python3-opencv`)
@@ -10,15 +14,64 @@ This is a evaluation trial on Robot Operating System ([ROS](https://www.ros.org/
 * [RobotRaconteur 0.14](https://github.com/robotraconteur/robotraconteur/wiki/Download) (Follow instruction to download)
 * [ROS Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu) (Follow instruction to download)
 
+#### ROS2
+
+##### Ubuntu 20.04 as the OS
+* Ubuntu 20.04 ([Native](https://www.linuxtechi.com/ubuntu-20-04-lts-installation-steps-screenshots/))
+* python3
+* OpenCV (`pip3 install opencv-python --user`)
+* git (`sudo apt-get install git`)
+* [ROS2 Foxy](https://docs.ros.org/en/foxy/Installation/Ubuntu-Install-Debians.html) (Follow instruction to download)
+* [Colcon](https://docs.ros.org/en/foxy/Tutorials/Colcon-Tutorial.html#install-colcon), simply run the command
+```
+sudo apt install python3-colcon-common-extensions
+
+```
+
+##### Win10 as the OS
+* Window 10
+* Follow this [link](https://docs.ros.org/en/foxy/Installation/Windows-Install-Binary.html#install-visual-c-redistributables) to install all requirements (ROS2 foxy/python3.8/OpenCV)
+* Install RTI Connext [Link](https://docs.ros.org/en/foxy/Installation/DDS-Implementations.html#windows-binary-install)
+* Go to C:\Python38. Copy python and paste it with the new name `python_d`.
+* [Colcon](https://docs.ros.org/en/foxy/Tutorials/Colcon-Tutorial.html#install-colcon), simply run the command
+```
+pip install -U colcon-common-extensions
+```
+
+
+##### Docker
+* Follow these instruction to install [docker-engine](https://docs.docker.com/engine/install/ubuntu/) on ubuntu.
+* Fire up container with the following commands
+```
+cd ~/robotics_middleware_trial_python_turtle_ros2
+source docker_run_ros2.sh
+```
+* Join a conatiner with the following commands
+```
+```
+cd ~/robotics_middleware_trial_python_turtle_ros2
+source docker_join_ros2.sh
+```
+```
+
+#### RR
+* Ubuntu 18.04 ([Native](https://www.linuxtechi.com/ubuntu-18-04-lts-desktop-installation-guide-screenshots/))
+* python2/python3 (`python` for python2, `python3` for python3, be aware of which one you're using)
+* OpenCV (`sudo apt-get install python-opencv`)
+* git (`sudo apt-get install git`)
+* [RobotRaconteur 0.10](https://github.com/robotraconteur/robotraconteur/wiki/Download) (Follow instruction to download)
+
+### Repo
 Clone this repo before continuing the trial:
 ```
 cd ~
 git clone https://github.com/hehonglu123/Robotics_Middleware_Trial_Python_Turtle.git
 ```
+
 ## Question Post:
-During the trial process, if you encounter questions specific about this trial, feel free to ask in the workspace. For questions about RobotRaconteur or ROS, please go to http://wiki.ros.org/answers.ros.org for ROS, and https://www.robotraconteur.com/forum for RR. Please include the following while posting your questions:
-* Setup: Ubuntu 20.04, ROS Noetic/RR 0.14
-* ROS/RR Error Message
+During the trial process, if you encounter questions specific about this trial, feel free to ask in the workspace. For questions about RobotRaconteur or ROS, please go to http://wiki.ros.org/answers.ros.org for ROS/ROS2, and https://www.robotraconteur.com/forum for RR. Please include the following while posting your questions:
+* Setup: Ubuntu 18.04/ Ubuntu 20.04, ROS Noetic/ROS2 Foxy/RR 0.14
+* ROS/ROS2/RR Error Message
 * Related scripts
 
 
@@ -156,6 +209,7 @@ for i in idx:
 
 ## Trial Instruction:
 * ROS (https://github.com/hehonglu123/ROS_RR_turtle_trial/blob/master/ROS/src/Trial_instruction.md)
+* ROS2 (https://github.com/eric565648/robotics_middleware_trial_python_turtle_ros2/blob/main/ROS2/Trial_instruction.md)
 * RR (https://github.com/hehonglu123/ROS_RR_turtle_trial/blob/master/RR/Trial_instruction.md)
 
 The final goal is to integrate those standalone python examples with ROS/RR, such that the python turtle will be able to drive based on what webcam sees.
