@@ -7,11 +7,12 @@ This is a evaluation trial on Robot Operating System ([ROS](https://www.ros.org/
 ### System
 
 #### ROS
-* Ubuntu 18.04 ([Native](https://www.linuxtechi.com/ubuntu-18-04-lts-desktop-installation-guide-screenshots/))
-* python2/python3 (`python` for python2, `python3` for python3, be aware of which one you're using)
-* OpenCV (`sudo apt-get install python-opencv`)
+* Ubuntu 20.04 ([Native](https://releases.ubuntu.com/20.04/))
+* python3.8
+* OpenCV (`sudo apt-get install python3-opencv`)
 * git (`sudo apt-get install git`)
-* [ROS Melodic](http://wiki.ros.org/melodic/Installation/Ubuntu) (Follow instruction to download)
+* [RobotRaconteur 0.14](https://github.com/robotraconteur/robotraconteur/wiki/Download) (Follow instruction to download)
+* [ROS Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu) (Follow instruction to download)
 
 #### ROS2
 
@@ -69,7 +70,7 @@ git clone https://github.com/hehonglu123/Robotics_Middleware_Trial_Python_Turtle
 
 ## Question Post:
 During the trial process, if you encounter questions specific about this trial, feel free to ask in the workspace. For questions about RobotRaconteur or ROS, please go to http://wiki.ros.org/answers.ros.org for ROS/ROS2, and https://www.robotraconteur.com/forum for RR. Please include the following while posting your questions:
-* Setup: Ubuntu 18.04/ Ubuntu 20.04, ROS Melodic/ROS2 Foxy/RR 0.10
+* Setup: Ubuntu 18.04/ Ubuntu 20.04, ROS Noetic/ROS2 Foxy/RR 0.14
 * ROS/ROS2/RR Error Message
 * Related scripts
 
