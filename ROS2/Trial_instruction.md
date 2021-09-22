@@ -1,6 +1,8 @@
 # ROS2 Survey
 The goal for this trial is to create python turtle node with ROS2 service subscriber action, a python node as client publish turtle bot motion or activate action, along with a given webcam image publisher to control on-screen turtle based on different color on the webcam.
 
+**Window10 version of the trial is not supported at the moment but will come in soon!!!**
+
 **Please time yourself for each checkpoint**
 
 ## ROS2 Resources:
@@ -46,7 +48,8 @@ For each ROS2 project, there's a dedicated workspace. Unlike in ROS1 we use `cat
 ### Package
 Like ROS1 (and unlike RobotRaconteur), ROS2 requires the workspace to build content. All package should be in `workspace/src` folder. In this repository there's already a webcam package (`~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws/src/webcam`), so you'll need to [create another package](https://docs.ros.org/en/foxy/Tutorials/Creating-Your-First-ROS2-Package.html) for python turtle.
 
-We use terminal to command a lot. For **ubuntu** simply use the terminal. For **Window** use `Developer Command Prompt for VS 2019` (You can find it in your start menu).
+We use terminal to command a lot. For **ubuntu** simply use the terminal. 
+<!-- For **Window** use `Developer Command Prompt for VS 2019` (You can find it in your start menu). -->
 
 
 **Ubuntu**
@@ -54,12 +57,13 @@ We use terminal to command a lot. For **ubuntu** simply use the terminal. For **
 $ cd ~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws/src
 $ ros2 pkg create --build-type ament_python python_turtle
 ```
-**Window** (Open command prompt with adminitsrator)
+
+<!-- **Window** (Open command prompt with adminitsrator)
 ```
 $ cd (PATH TO YOUR REPO)\Robotics_Middleware_Trial_Python_Turtle\ROS2\dev_ws\src
 $ ros2 pkg create --build-type ament_python python_turtle
 ```
-Note the direction of slashes is different between ubuntu and window machines.
+Note the direction of slashes is different between ubuntu and window machines. -->
 
 This creates a new package `python_turtle` under `~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws/src`.
 
@@ -75,11 +79,12 @@ Let's create our own message type `turtle_msg`! We first create a new package `t
 $ cd ~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws/src
 $ ros2 pkg create --build-type ament_cmake turtle_interfaces
 ```
-**Window** (Open command prompt with adminitsrator)
+
+<!-- **Window** (Open command prompt with adminitsrator)
 ```
 $ cd (PATH TO YOUR REPO)\Robotics_Middleware_Trial_Python_Turtle\ROS2\dev_ws\src
 $ ros2 pkg create --build-type ament_cmake turtle_interfaces
-```
+``` -->
 
 Create a folder name `msg` under your package folder `turtle_interfaces`. Then create a file named `Turtlemsg.msg` and copy paste the below content. The message include the name, the pose of the turtle and the color of the turtle.
 ```
@@ -166,12 +171,13 @@ $ source /opt/ros/foxy/setup.bash
 $ cd ~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws
 $ colcon build
 ```
-**Window** (Open command prompt with adminitsrator)
+
+<!-- **Window** (Open command prompt with adminitsrator)
 ```
 $ call C:\dev\ros2_foxy\local_setup.bat
 $ cd (PATH TO YOUR REPO)/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws
 $ colcon build
-```
+``` -->
 
 You should see `Summary: X packages finished` where `X` is the number of your packages in the workspace. Three folders `build/` `install/` and `log/` were generated. Remeber to setup the workspace if you want to use packages in the workspace.
 
