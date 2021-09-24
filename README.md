@@ -11,7 +11,6 @@ This is a evaluation trial on Robot Operating System ([ROS](https://www.ros.org/
 * python3.8
 * OpenCV (`sudo apt-get install python3-opencv`)
 * git (`sudo apt-get install git`)
-* [RobotRaconteur 0.14](https://github.com/robotraconteur/robotraconteur/wiki/Download) (Follow instruction to download)
 * [ROS Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu) (Follow instruction to download)
 
 #### ROS2
@@ -55,11 +54,11 @@ source docker_join_ros2.sh
 ```
 
 #### RR
-* Ubuntu 18.04 ([Native](https://www.linuxtechi.com/ubuntu-18-04-lts-desktop-installation-guide-screenshots/))
-* python2/python3 (`python` for python2, `python3` for python3, be aware of which one you're using)
-* OpenCV (`sudo apt-get install python-opencv`)
+* Ubuntu 20.04 ([Native](https://releases.ubuntu.com/20.04/))
+* python3.8
+* OpenCV (`sudo apt-get install python3-opencv`)
 * git (`sudo apt-get install git`)
-* [RobotRaconteur 0.10](https://github.com/robotraconteur/robotraconteur/wiki/Download) (Follow instruction to download)
+* [RobotRaconteur 0.14](https://github.com/robotraconteur/robotraconteur/wiki/Download) (Follow instruction to download)
 
 ### Repo
 Clone this repo before continuing the trial:
