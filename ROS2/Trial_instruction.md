@@ -1,8 +1,6 @@
 # ROS2 Survey
 The goal for this trial is to create python turtle node with ROS2 service subscriber action, a python node as client publish turtle bot motion or activate action, along with a given webcam image publisher to control on-screen turtle based on different color on the webcam.
 
-**Window10 version of the trial is not supported at the moment but will come in soon!!!**
-
 **Please time yourself for each checkpoint**
 
 ## ROS2 Resources:
