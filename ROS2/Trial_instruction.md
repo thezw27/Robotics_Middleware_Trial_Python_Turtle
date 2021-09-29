@@ -45,6 +45,8 @@ The goal for this trial is to create python turtle node with ROS2 service subscr
 ### Workspace
 For each ROS2 project, there's a dedicated workspace. Unlike in ROS1 we use `catkin`, in ROS2 we use `colcon` to build our workspace. The workspace here is `~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws` which is already created.
 
+All your packages should be put in the folder `PATH_TO_WORKSPACE/src`
+
 ### Package
 Like ROS1 (and unlike RobotRaconteur), ROS2 requires the workspace to build content. All package should be in `workspace/src` folder. In this repository there's already a webcam package (`~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws/src/webcam`), so you'll need to [create another package](https://docs.ros.org/en/foxy/Tutorials/Creating-Your-First-ROS2-Package.html) for python turtle.
 
@@ -55,15 +57,17 @@ We use terminal to command a lot. For **ubuntu** simply use the terminal.
 **Ubuntu**
 ```
 $ cd ~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws/src
+$ source /opt/ros/foxy/setup.bash
 $ ros2 pkg create --build-type ament_python python_turtle
 ```
 
-<!-- **Window** (Open command prompt with adminitsrator)
+**Window** (Use Visual Studio command prompt with adminitsrator)
 ```
 $ cd (PATH TO YOUR REPO)\Robotics_Middleware_Trial_Python_Turtle\ROS2\dev_ws\src
+$ call C:\opt\ros\foxy\x64\local_setup.bat
 $ ros2 pkg create --build-type ament_python python_turtle
 ```
-Note the direction of slashes is different between ubuntu and window machines. -->
+Note the direction of slashes is different between ubuntu and window machines.
 
 This creates a new package `python_turtle` under `~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws/src`.
 
@@ -77,14 +81,16 @@ Let's create our own message type `turtle_msg`! We first create a new package `t
 **Ubuntu**
 ```
 $ cd ~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws/src
+$ source /opt/ros/foxy/setup.bash
 $ ros2 pkg create --build-type ament_cmake turtle_interfaces
 ```
 
-<!-- **Window** (Open command prompt with adminitsrator)
+**Window** (Use Visual Studio command prompt with adminitsrator)
 ```
 $ cd (PATH TO YOUR REPO)\Robotics_Middleware_Trial_Python_Turtle\ROS2\dev_ws\src
+$ call C:\opt\ros\foxy\x64\local_setup.bat
 $ ros2 pkg create --build-type ament_cmake turtle_interfaces
-``` -->
+```
 
 Create a folder name `msg` under your package folder `turtle_interfaces`. Then create a file named `Turtlemsg.msg` and copy paste the below content. The message include the name, the pose of the turtle and the color of the turtle.
 ```
@@ -97,16 +103,19 @@ In order to let the compiler know the message and link necessary packages, we ne
 
 First open `CMakeLists.txt` in `turtle_interfaces` and add the following lines before the line `ament_package()`.
 ```
+find_package(geometry_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/Turtlemsg.msg"
+
 )
 ```
 
 And open `package.xml` and add the following lines.
 ```
 <build_depend>rosidl_default_generators</build_depend>
+<depend>geometry_msgs</depend>
 
 <exec_depend>rosidl_default_runtime</exec_depend>
 
@@ -151,6 +160,7 @@ ROS2 service has to have a return type (like a function call), so we can simply 
 We then also open `CMakeLists.txt` and include the following content
 
 ```
+find_package(geometry_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
@@ -172,20 +182,28 @@ $ cd ~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws
 $ colcon build
 ```
 
-<!-- **Window** (Open command prompt with adminitsrator)
+**Window** (Use Visual Studio command prompt with adminitsrator)
 ```
-$ call C:\dev\ros2_foxy\local_setup.bat
-$ cd (PATH TO YOUR REPO)/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws
+$ call C:\opt\ros\foxy\x64\local_setup.bat
+$ cd (PATH TO YOUR REPO)\Robotics_Middleware_Trial_Python_Turtle\ROS2\dev_ws
 $ colcon build
-``` -->
+```
 
-You should see `Summary: X packages finished` where `X` is the number of your packages in the workspace. Three folders `build/` `install/` and `log/` were generated. Remeber to setup the workspace if you want to use packages in the workspace.
+You should see `Summary: X packages finished` where `X` is the number of your packages in the workspace. Three folders `build/` `install/` and `log/` were generated. 
 
+**Important** Remeber to setup the workspace **everytime you open a new terminal** if you want to use packages in the workspace. Otherwise the machine can't find all these.
+
+**Ubuntu**
 ```
 $ source ~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws/install/setup.bash
 ```
 
-You can also add the command to your bash script so everytime a new terminal is open, the workspace environment is setup.
+**Window** (Use Visual Studio command prompt with adminitsrator)
+```
+$ call (PATH TO YOUR REPO)\Robotics_Middleware_Trial_Python_Turtle\ROS2\dev_ws\install\setup.bash
+```
+
+If your using **ubuntu**, you can also add the command to your bash script so everytime a new terminal is open, the workspace environment is setup.
 ```
 $ echo 'source ~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws/install/setup.bash' >> ~/.bashrc 
 ```

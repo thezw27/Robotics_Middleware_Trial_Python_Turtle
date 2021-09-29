@@ -36,6 +36,11 @@ sudo apt install python3-colcon-common-extensions
 ```
 pip install -U colcon-common-extensions
 ```
+Note: Use `ROS2 Build Installation from aka.ms/ros` to install ROS2 instead of downloading their pre-built packages.
+Your environment setup command will be
+```
+call C:\opt\ros\foxy\x64\local_setup.bat
+```
 
 
 ##### Docker
