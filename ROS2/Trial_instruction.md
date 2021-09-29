@@ -45,10 +45,10 @@ The goal for this trial is to create python turtle node with ROS2 service subscr
 ### Workspace
 For each ROS2 project, there's a dedicated workspace. Unlike in ROS1 we use `catkin`, in ROS2 we use `colcon` to build our workspace. The workspace here is `~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws` which is already created.
 
-All your packages should be put in the folder `PATH_TO_WORKSPACE/src`
+All your packages should be put in the folder `PATH_TO_WORKSPACE/src` if you want to create your own repo in the future.
 
 ### Package
-Like ROS1 (and unlike RobotRaconteur), ROS2 requires the workspace to build content. All package should be in `workspace/src` folder. In this repository there's already a webcam package (`~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws/src/webcam`), so you'll need to [create another package](https://docs.ros.org/en/foxy/Tutorials/Creating-Your-First-ROS2-Package.html) for python turtle.
+Like ROS1 (and unlike RobotRaconteur), ROS2 requires the workspace to build content. All packages should be in `PATH_TO_WORKSPACE/src` folder. In this repository there's already a webcam package (`~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws/src/webcam`), and you'll need to [create another package](https://docs.ros.org/en/foxy/Tutorials/Creating-Your-First-ROS2-Package.html) for python turtle.
 
 We use terminal to command a lot. For **ubuntu** simply use the terminal. 
 <!-- For **Window** use `Developer Command Prompt for VS 2019` (You can find it in your start menu). -->
