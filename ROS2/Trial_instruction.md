@@ -69,7 +69,7 @@ Note the direction of slashes is different between ubuntu and window machines.
 
 This creates a new package `python_turtle` under `~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws/src`.
 
-Unlike ROS1, `python` and `C++` uses in different types of package. For `python` use `ament_python` and for `C++` use `ament_cmake`. However, it's possible to build the package with `ament_cmake_python` which both language can be used in the package.
+Unlike ROS1, `python` and `C++` uses different types of package. For `python` use `ament_python` and for `C++` use `ament_cmake`. However, it's possible to build the package with `ament_cmake_python` which both languages can be used in the package.
 There are also minor different touches for these two language. In this trial, we use `python`.
 
 ### Message Type
@@ -106,7 +106,7 @@ find_package(rosidl_default_generators REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/Turtlemsg.msg"
-
+  DEPENDENCIES geometry_msgs
 )
 ```
 
@@ -122,7 +122,7 @@ And open `package.xml` and add the following lines.
 
 By this point, the message type should be built together when building the package.
 
-You can include the message type in the similar way of other ROS2 messages:
+You can include the message type in the similar way of other ROS2 messages in python scripts. Like this for example:
 ```
 from python_turtle import Turtlemsg
 from geometry_msgs import Pose
@@ -165,6 +165,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/turtle_msg.msg"
   "srv/Setpose.srv"
   "srv/Setcolor.srv"
+  DEPENDENCIES geometry_msgs
 )
 ```
 
@@ -184,7 +185,7 @@ $ colcon build
 ```
 $ call C:\opt\ros\foxy\x64\local_setup.bat
 $ cd (PATH TO YOUR REPO)\Robotics_Middleware_Trial_Python_Turtle\ROS2\dev_ws
-$ colcon build
+$ colcon build --merge-install
 ```
 
 You should see `Summary: X packages finished` where `X` is the number of your packages in the workspace. Three folders `build/` `install/` and `log/` were generated. 
@@ -198,7 +199,7 @@ $ source ~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws/install/setup.bas
 
 **Window** (Use Visual Studio command prompt with adminitsrator)
 ```
-$ call (PATH TO YOUR REPO)\Robotics_Middleware_Trial_Python_Turtle\ROS2\dev_ws\install\setup.bash
+$ call (PATH TO YOUR REPO)\Robotics_Middleware_Trial_Python_Turtle\ROS2\dev_ws\install\local_setup.bat
 ```
 
 If your using **ubuntu**, you can also add the command to your bash script so everytime a new terminal is open, the workspace environment is setup.
@@ -210,9 +211,9 @@ $ echo 'source ~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws/install/set
 Try the following commands and you'll see the defined message and services.
 
 ```
-ros2 interfaces show turtle_interface/msg/Turtlemsg
-ros2 interfaces show turtle_interfaces/srv/Setpose
-ros2 interfaces show turtle_interfaces/srv/Setcolor
+ros2 interface show turtle_interfaces/msg/Turtlemsg
+ros2 interface show turtle_interfaces/srv/Setpose
+ros2 interface show turtle_interfaces/srv/Setcolor
 ```
 
 Please direct to [Readme](https://github.com/eric565648/Robotics_Middleware_Trial_Python_Turtle) for question post.
@@ -261,6 +262,9 @@ Finally, in the `capture_frame` function, images are read from the webcam. Whene
 rval,img_data = self.camera.read()
 if rval:
     self.img_publisher.publish(self.bridge.cv2_to_imgmsg(img_data, "bgr8"))
+    # If you're using win10, uncomment the line below and comment the line above
+    # self.img_publisher.publish(cv2_to_imgmsg(img_data))
+    
     return img_data 
 ```
 
@@ -286,6 +290,8 @@ In the callback function, `img_msg` is the message object that is retrieve from 
 def img_callback(self, img_msg):
   try:
       cv_image = self.bridge.imgmsg_to_cv2(img_msg, 'bgr8')
+      # If you're using win10, uncomment the line below and comment the line above
+      # cv_image = imgmsg_to_cv2(img_msg)
   except CvBridgeError as e:
       self.get_logger().info(e)
   
