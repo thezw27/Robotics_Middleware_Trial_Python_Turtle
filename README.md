@@ -50,12 +50,11 @@ call C:\opt\ros\foxy\x64\local_setup.bat
 cd ~/robotics_middleware_trial_python_turtle_ros2
 source docker_run_ros2.sh
 ```
+
 * Join a conatiner with the following commands
-```
 ```
 cd ~/robotics_middleware_trial_python_turtle_ros2
 source docker_join_ros2.sh
-```
 ```
 
 #### RR
