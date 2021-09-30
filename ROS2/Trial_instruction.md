@@ -199,7 +199,7 @@ $ source ~/Robotics_Middleware_Trial_Python_Turtle/ROS2/dev_ws/install/setup.bas
 
 **Window** (Use Visual Studio command prompt with adminitsrator)
 ```
-$ call (PATH TO YOUR REPO)\Robotics_Middleware_Trial_Python_Turtle\ROS2\dev_ws\install\local_setup.bat
+$ call (PATH TO YOUR REPO)\Robotics_Middleware_Trial_Python_Turtle\ROS2\dev_ws\install\setup.bat
 ```
 
 If your using **ubuntu**, you can also add the command to your bash script so everytime a new terminal is open, the workspace environment is setup.
