@@ -46,6 +46,10 @@ pip install colcon-common-extensions
 ```
 pip install PythonTurtle
 ``` -->
+* [Keyborad module](https://pypi.org/project/keyboard/), open a command prompt as an administrator, then run the command 
+```
+pip install keyboard
+``` 
 * Set up tcl environment variable, open a command prompt as an administrator, then run the command
 ```
 setx -m TCL_LIBRARY "C:\Python38\tcl\tcl8.6"
