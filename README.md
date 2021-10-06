@@ -30,17 +30,26 @@ sudo apt install python3-colcon-common-extensions
 ##### Win10 as the OS
 * Window 10
 * Follow this [link](https://docs.ros.org/en/foxy/Installation/Windows-Install-Binary.html#install-visual-c-redistributables) to install all requirements (ROS2 foxy/python3.8/OpenCV)
-* Install RTI Connext [Link](https://docs.ros.org/en/foxy/Installation/DDS-Implementations.html#windows-binary-install)
-* Go to C:\Python38. Copy python and paste it with the new name `python_d`.
-* [Colcon](https://docs.ros.org/en/foxy/Tutorials/Colcon-Tutorial.html#install-colcon), simply run the command
-```
-pip install -U colcon-common-extensions
-```
+
 Note: Use `ROS2 Build Installation from aka.ms/ros` to install ROS2 instead of downloading their pre-built packages.
 Your environment setup command will be
 ```
 call C:\opt\ros\foxy\x64\local_setup.bat
 ```
+* Install RTI Connext [Link](https://docs.ros.org/en/foxy/Installation/DDS-Implementations.html#windows-binary-install)
+* Go to C:\Python38. Copy python and paste it with the new name `python_d`.
+* [Colcon](https://docs.ros.org/en/foxy/Tutorials/Colcon-Tutorial.html#install-colcon), open a command prompt as an administrator, then run the command 
+```
+pip install colcon-common-extensions
+```
+<!-- * Install `turtle` module for python, open a command prompt as an administrator, then run the command 
+```
+pip install PythonTurtle
+``` -->
+* Set up tcl environment variable, open a command prompt as an administrator, then run the command
+```
+setx -m TCL_LIBRARY "C:\Python38\tcl\tcl8.6"
+``` 
 
 
 ##### Docker
