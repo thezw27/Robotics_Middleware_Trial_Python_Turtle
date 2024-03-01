@@ -1,0 +1,3 @@
+source;share\turtle_interfaces\hook\pythonpath.ps1
+source;share\turtle_interfaces\hook\pythonpath.bat
+source;share\turtle_interfaces\hook\pythonpath.dsv
