@@ -51,9 +51,9 @@ class Webcam_Impl(Node):
 
         rval,img_data = self.camera.read()
         if rval:
-            self.img_publisher.publish(self.bridge.cv2_to_imgmsg(img_data, "bgr8"))
+            # self.img_publisher.publish(self.bridge.cv2_to_imgmsg(img_data, "bgr8"))
             # If you're using win10, uncomment the line below and comment the line above
-            # self.img_publisher.publish(cv2_to_imgmsg(img_data))
+            self.img_publisher.publish(cv2_to_imgmsg(img_data))
             return img_data 
         else:
             print("error")
